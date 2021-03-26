@@ -44,6 +44,8 @@ class Users implements UserInterface
      */
     private $password;
 
+    public $confirm_password;
+
     /**
      * @ORM\Column(type="datetime")
      */
@@ -65,6 +67,31 @@ class Users implements UserInterface
 
         return $this;
     }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getPrenom(): ?string
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom(string $prenom): self
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
 
     /**
      * A visual identifier that represents this user.

@@ -11,7 +11,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-
+/**
+ * @Route("/security", name="security_")
+ */
 class SecurityController extends AbstractController
 {
     protected $em;
@@ -21,7 +23,7 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/inscription", name="security_registration")
+     * @Route("/inscription", name="registration")
      * @param Request $request
      * @param UserPasswordEncoderInterface $encoder
      * @return Response
@@ -48,7 +50,7 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/connexion", name="security_login")
+     * @Route("/connexion", name="login")
      */
     public function login(): Response
     {
@@ -56,7 +58,7 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/deconnexion", name="security_logout")
+     * @Route("/deconnexion", name="logout")
      */
     public function logout(){
     }
