@@ -13,9 +13,6 @@ class SiteController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/SiteController.php',
-        ]);
+        return $this->render('base.html.twig');
     }
 }
