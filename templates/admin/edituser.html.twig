@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block vue %}
+    <h1>Modifier l'utilisateur</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}<br>
+    <button type="submit">Enregistrer la modification</button>
+    {{ form_start(form) }}
+
+{% endblock %}

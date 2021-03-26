@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block vue %}
+    <h1>Liste des utilisateurs</h1>
+    <table class="table">
+        <thead>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Email</th>
+        <th>Rôles</th>
+        <th>Date de naissance</th>
+        <th>Action</th>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.nom }}</td>
+                    <td>{{ user.prenom }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                        {% for role in user.roles %}
+                            {% if role == "ROLE_ADMIN" %}
+                                Administrateur
+                            {% else %}
+                                Client
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{{ user.birthday | date('d/m/Y')  }}</td>
+                    <td><a href="{{ path('admin_edit_user', {'id' : user.id})  }}">Modifier</a></td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7"> Il n'y a pas d'utilisateur inscrit</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

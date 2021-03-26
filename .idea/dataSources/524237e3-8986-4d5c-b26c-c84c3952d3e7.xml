@@ -1419,7 +1419,7 @@
     </column>
     <column id="511" parent="173" name="birthday">
       <Position>7</Position>
-      <DataType>DATETIME|0s</DataType>
+      <DataType>DATE|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="512" parent="173" name="UNIQ_1483A5E9E7927C74">
