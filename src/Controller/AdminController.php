@@ -2,8 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\Users;
+use App\Entity\User;
 use App\Form\EditUserType;
+use App\Repository\UserRepository;
 use App\Repository\UsersRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -26,11 +27,13 @@ class AdminController extends AbstractController
 
     /**
      *  Lister les utilisateurs
+     *
+     *
      * @Route("/utilisateurs", name="users")
-     * @param UsersRepository $users
+     * @param UserRepository $users
      * @return Response
      */
-    public function usersList(UsersRepository $users): Response
+    public function usersList(UserRepository $users): Response
     {
         return $this->render('admin/users.html.twig', [
             'users' => $users->findAll(),
@@ -39,12 +42,14 @@ class AdminController extends AbstractController
 
     /**
      *  Editer un utilisateur
+     *
+     *
      * @Route("/utilisateur/modifier/{id<\d+>}", name="edit_user")
-     * @param Users $user
+     * @param User $user
      * @param Request $request
      * @return Response
      */
-    public function editUser(Users $user, Request $request): Response
+    public function editUser(User $user, Request $request): Response
     {
         $form = $this->createForm(EditUserType::class, $user);
         $form->handleRequest($request);
@@ -53,7 +58,7 @@ class AdminController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
 
-            $em->persist($user);
+            //$em->persist($user);
             $em->flush();
             $this->addFlash('message', 'Utilisateur modifié avec succès');
             return $this->redirectToRoute('admin_users');

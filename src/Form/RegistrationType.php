@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Users;
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -15,7 +15,7 @@ class RegistrationType extends AbstractType
         $builder
             ->add('nom')
             ->add('prenom')
-            ->add('email')
+            ->add('username')
             ->add('birthday')
             ->add('password', PasswordType::class)
             ->add('confirm_password', PasswordType::class)
@@ -26,7 +26,7 @@ class RegistrationType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Users::class,
+            'data_class' => User::class,
         ]);
     }
 }

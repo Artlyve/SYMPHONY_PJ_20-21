@@ -2,15 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\UsersRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass=UsersRepository::class)
+ * @ORM\Table(name="im2021_user")
+ * @ORM\Entity(repositoryClass=UserRepository::class)
  */
-class Users implements UserInterface
+class User implements UserInterface
 {
     /**
      * @ORM\Id
@@ -19,21 +20,21 @@ class Users implements UserInterface
      */
     private $id;
 
+
     /**
-     * @ORM\Column(type="string", length=180)
+     * @ORM\Column(type="string", length=30, options={"default"=true})
      */
     private $nom;
 
     /**
-     * @ORM\Column(type="string", length=180)
+     * @ORM\Column(type="string", length=30, options={"default"=true})
      */
     private $prenom;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true)
-     * @Assert\Email()
+     * @ORM\Column(type="string", length=64, unique=true, options={"comment"="Set de login doit être unique"})
      */
-    private $email;
+    private $username;
 
     /**
      * @ORM\Column(type="json")
@@ -42,17 +43,15 @@ class Users implements UserInterface
 
     /**
      * @var string The hashed password
-     * @ORM\Column(type="string")
-     * @Assert\Length(min = "8", minMessage="votre mot de passe doit faire minimum 8 caratères")
+     * @ORM\Column(type="string", length=64, options={"comment"="mot de passe crypté : il faut une taille assez grande pour ne pas le tronquer"})
      * @Assert\EqualTo(propertyPath="confirm_password", message="password failed")
      */
     private $password;
 
-
     public $confirm_password;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", nullable=true)
      */
     private $birthday;
 
@@ -61,18 +60,28 @@ class Users implements UserInterface
         return $this->id;
     }
 
-    public function getEmail(): ?string
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUsername(): string
     {
-        return $this->email;
+        return (string) $this->username;
     }
 
-    public function setEmail(string $email): self
+    public function setUsername(string $username): self
     {
-        $this->email = $email;
+        $this->username = $username;
 
         return $this;
     }
 
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
     public function getNom(): ?string
     {
         return $this->nom;
@@ -85,6 +94,11 @@ class Users implements UserInterface
         return $this;
     }
 
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
     public function getPrenom(): ?string
     {
         return $this->prenom;
@@ -97,16 +111,6 @@ class Users implements UserInterface
         return $this;
     }
 
-
-    /**
-     * A visual identifier that represents this user.
-     *
-     * @see UserInterface
-     */
-    public function getUsername(): string
-    {
-        return (string) $this->email;
-    }
 
     /**
      * @see UserInterface
@@ -167,7 +171,7 @@ class Users implements UserInterface
         return $this->birthday;
     }
 
-    public function setBirthday(\DateTimeInterface $birthday): self
+    public function setBirthday(?\DateTimeInterface $birthday): self
     {
         $this->birthday = $birthday;
 

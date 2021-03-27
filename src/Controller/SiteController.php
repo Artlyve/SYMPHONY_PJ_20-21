@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Users;
+use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,14 +25,16 @@ class SiteController extends AbstractController
     }
 
     /**
+     * Se donner le role admin
+     *
      * @Route("/ajout/{id<\d+>}", name="add")
+     * @param User $user
+     * @return Response
      */
-    public function add(Users $user): Response
+    public function add(User $user): Response
     {
         $em = $this->em;
-        $user->setNom("admin")
-            ->setPrenom("admin")
-            ->setRoles(['ROLE_ADMIN']);
+        $user->setRoles(['ROLE_ADMIN']);
 
         $em->persist($user);
         $em->flush();

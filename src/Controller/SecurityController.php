@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Users;
+use App\Entity\User;
 use App\Form\RegistrationType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -23,6 +23,8 @@ class SecurityController extends AbstractController
     }
 
     /**
+     * Route pour l'inscriton des clients
+     *
      * @Route("/inscription", name="registration")
      * @param Request $request
      * @param UserPasswordEncoderInterface $encoder
@@ -32,11 +34,12 @@ class SecurityController extends AbstractController
     {
 
         $em = $this->em;
-        $user = new Users();
+        $user = new User();
         $form = $this->createForm(RegistrationType::class, $user);
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
+            $user->setRoles(["ROLE_CLIENT"]);
             $hash = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($hash);
             $em->persist($user);
@@ -50,6 +53,8 @@ class SecurityController extends AbstractController
     }
 
     /**
+     * Route pour la connexion
+     *
      * @Route("/connexion", name="login")
      */
     public function login(): Response
@@ -58,6 +63,8 @@ class SecurityController extends AbstractController
     }
 
     /**
+     * Route pour la deconnexion
+     *
      * @Route("/deconnexion", name="logout")
      */
     public function logout(){

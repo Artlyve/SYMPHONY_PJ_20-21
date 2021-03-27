@@ -4,12 +4,12 @@
     <h1>Inscrition sur le site</h1><br>
     {{ form_start(form) }}
 
-    {{ form_row(form.nom, {'label':'Nom', 'attr' : {'placeholder' : 'Votre Nom'}}) }}<br>
-    {{ form_row(form.prenom, {'label':'Prenom', 'attr' : {'placeholder' : 'Votre Prenom'}}) }}<br>
-    {{ form_row(form.birthday, {'label':'Date de naissance', 'attr' : {'placeholder' : 'Votre date de naissance'}}) }}<br>
-    {{ form_row(form.email, {'label':'Email', 'attr' : {'placeholder' : 'adresse email'}}) }}<br>
-    {{ form_row(form.password, {'label':'Mot de passe', 'attr' : {'placeholder' : 'mot de passe'}}) }}<br>
-    {{ form_row(form.confirm_password, {'label':'Confirmation','attr' : {'placeholder' : 'confirmation'}}) }}<br>
+    {{ form_row(form.nom, {'label':'Nom ', 'attr' : {'placeholder' : 'Votre Nom'}}) }}<br>
+    {{ form_row(form.prenom, {'label':'Prenom ', 'attr' : {'placeholder' : 'Votre Prenom'}}) }}<br>
+    {{ form_row(form.birthday, {'label':'Date de naissance ', 'attr' : {'placeholder' : 'Votre date de naissance'}}) }}<br>
+    {{ form_row(form.username, {'label':'identifant ', 'attr' : {'placeholder' : 'Votre identidiant'}}) }}<br>
+    {{ form_row(form.password, {'label':'Mot de passe ', 'attr' : {'placeholder' : 'mot de passe'}}) }}<br>
+    {{ form_row(form.confirm_password, {'label':'Confirmation ','attr' : {'placeholder' : 'confirmation'}}) }}<br>
     <button type="submit" class="btn btn-success">Inscrition !</button><br>
 
     {{ form_end(form) }}
