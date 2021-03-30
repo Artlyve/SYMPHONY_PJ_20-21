@@ -81,6 +81,12 @@ return [[
 '%5B%5BC%5DApp%5CController%5CSiteController%23index%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CSiteController%23add%5D%5B1%5D' => 8,
 '%5B%5BC%5DApp%5CController%5CSiteController%23add%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CSiteController%23routeAdmin%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CController%5CSiteController%23routeAdmin%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CSiteController%23routeUtilisateur%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CController%5CSiteController%23routeUtilisateur%5D%5B1%5D' => 2,
+'%5BApp%5CController%5CSiteController%23routeAnonyme%5D%5B1%5D' => 1,
+'%5B%5BC%5DApp%5CController%5CSiteController%23routeAnonyme%5D%5B1%5D' => 2,
 '%5BApp%5CController%5CSiteController%24em%5D%5B1%5D' => 1,
 '%5B%5BC%5DApp%5CController%5CSiteController%24em%5D%5B1%5D' => 2,
 '%5BDoctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%5D%5B1%5D' => 1,
@@ -624,7 +630,7 @@ return [[
 
 0 => 'N;',
 1 => [],
-2 => 1617112025,
+2 => 1617116240,
 3 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [

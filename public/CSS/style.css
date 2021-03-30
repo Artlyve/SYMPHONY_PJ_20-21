@@ -46,13 +46,15 @@ nav ul{
      text-transform: uppercase;
 
  }
- a{
-     color: rgba(255, 255, 255, 0.6);
- }
+
  a:hover{
      color: white;
  }
 
  .vue{
      padding: 25px;
+ }
+
+ table tbody tr td a{
+     color: #1b9448;
  }
