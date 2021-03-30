@@ -55,6 +55,6 @@ nav ul{
      padding: 25px;
  }
 
- table tbody tr td a{
-     color: #1b9448;
- }
+a{
+    color: rgba(255, 255, 255, 0.6);
+}

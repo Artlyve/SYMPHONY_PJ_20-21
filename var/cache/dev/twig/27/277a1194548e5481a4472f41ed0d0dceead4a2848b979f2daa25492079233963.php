@@ -137,7 +137,7 @@ $context["role"], "ROLE_CLIENT"))) {
                     <td><a href=\"";
             // line 33
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_edit_user", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 33)]), "html", null, true);
-            echo "\">Modifier</a>
+            echo " \">Modifier</a>
                         <a href=\"";
             // line 34
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_delete_user", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 34)]), "html", null, true);
@@ -217,7 +217,7 @@ $context["role"], "ROLE_CLIENT"))) {
                         {% endfor %}
                     </td>
                     <td>{{ user.birthday | date('d/m/Y')  }}</td>
-                    <td><a href=\"{{ path('admin_edit_user', {'id' : user.id})  }}\">Modifier</a>
+                    <td><a href=\"{{ path('admin_edit_user', {'id' : user.id})  }} \">Modifier</a>
                         <a href=\"{{ path('admin_delete_user', {'id' : user.id})  }}\">Supprimer</a></td>
                 </tr>
             {% else %}
