@@ -20,20 +20,13 @@
                     <label class="label">NOM</label>
                     <ul>
                         {% if not app.user %}
-                            <li class="nav-item">
-                                <a href="{{ path('security_login') }}" class="nav-link">Connexion</a>
-                            </li>
-                            <li><a href="{{ path('security_registration') }}">Inscription</a></li>
+                            {{ render(controller('App\\Controller\\SiteController::routeAnonyme')) }}
                         {% else %}
-                            {% for roles in app.user.roles %}
-                                {% if roles == "ROLE_ADMIN" %}
-                                    <li class="nav-item">
-                                        <a href="{{ path('admin_users') }}" class="nav-link">Administration</a>
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
-                            <li class="nav-item">
-                                <a href="{{ path('security_logout') }}" class="nav-link">Déconnexion</a>
+                            {{ render(controller('App\\Controller\\SiteController::routeAdmin')) }}
+                            {{ render(controller('App\\Controller\\SiteController::routeUtilisateur')) }}
+
+                            <li>
+                                <a href="{{ path('security_logout') }}">Déconnexion</a>
                             </li>
                         {% endif %}
 

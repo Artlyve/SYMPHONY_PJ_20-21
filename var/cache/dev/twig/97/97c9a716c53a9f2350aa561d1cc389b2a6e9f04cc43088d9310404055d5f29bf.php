@@ -73,19 +73,19 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
             ";
         // line 18
         $this->displayBlock('header', $context, $blocks);
-        // line 43
+        // line 36
         echo "        </header>
         <div class=\"vue\">
             ";
-        // line 45
+        // line 38
         $this->displayBlock('body', $context, $blocks);
-        // line 55
+        // line 48
         echo "        </div>
         <footer class=\"footer\">
             ";
-        // line 57
+        // line 50
         $this->displayBlock('footer', $context, $blocks);
-        // line 60
+        // line 53
         echo "
         </footer>
     </body>
@@ -180,51 +180,29 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
         // line 22
         if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 22, $this->source); })()), "user", [], "any", false, false, false, 22)) {
             // line 23
-            echo "                            <li class=\"nav-item\">
-                                <a href=\"";
-            // line 24
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login");
-            echo "\" class=\"nav-link\">Connexion</a>
-                            </li>
-                            <li><a href=\"";
-            // line 26
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_registration");
-            echo "\">Inscription</a></li>
+            echo "                            ";
+            echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\SiteController::routeAnonyme"));
+            echo "
                         ";
         } else {
-            // line 28
+            // line 25
             echo "                            ";
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 28, $this->source); })()), "user", [], "any", false, false, false, 28), "roles", [], "any", false, false, false, 28));
-            foreach ($context['_seq'] as $context["_key"] => $context["roles"]) {
-                // line 29
-                echo "                                ";
-                if ((0 === twig_compare($context["roles"], "ROLE_ADMIN"))) {
-                    // line 30
-                    echo "                                    <li class=\"nav-item\">
-                                        <a href=\"";
-                    // line 31
-                    echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users");
-                    echo "\" class=\"nav-link\">Administration</a>
-                                    </li>
-                                ";
-                }
-                // line 34
-                echo "                            ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['roles'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 35
-            echo "                            <li class=\"nav-item\">
+            echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\SiteController::routeAdmin"));
+            echo "
+                            ";
+            // line 26
+            echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\SiteController::routeUtilisateur"));
+            echo "
+
+                            <li>
                                 <a href=\"";
-            // line 36
+            // line 29
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
-            echo "\" class=\"nav-link\">Déconnexion</a>
+            echo "\">Déconnexion</a>
                             </li>
                         ";
         }
-        // line 39
+        // line 32
         echo "
                     </ul>
                 </nav>
@@ -237,7 +215,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
 
     }
 
-    // line 45
+    // line 38
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -247,17 +225,17 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 46
+        // line 39
         echo "                <h1>
                     ";
-        // line 47
+        // line 40
         $this->displayBlock('titre_principal', $context, $blocks);
-        // line 50
+        // line 43
         echo "                </h1>
                 ";
-        // line 51
+        // line 44
         $this->displayBlock('vue', $context, $blocks);
-        // line 54
+        // line 47
         echo "            ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -267,7 +245,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
 
     }
 
-    // line 47
+    // line 40
     public function block_titre_principal($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -277,7 +255,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "titre_principal"));
 
-        // line 48
+        // line 41
         echo "
                     ";
         
@@ -288,7 +266,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
 
     }
 
-    // line 51
+    // line 44
     public function block_vue($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -298,7 +276,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "vue"));
 
-        // line 52
+        // line 45
         echo "
                 ";
         
@@ -309,7 +287,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
 
     }
 
-    // line 57
+    // line 50
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -319,7 +297,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 58
+        // line 51
         echo "
             ";
         
@@ -337,7 +315,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
 
     public function getDebugInfo()
     {
-        return array (  323 => 58,  313 => 57,  302 => 52,  292 => 51,  281 => 48,  271 => 47,  261 => 54,  259 => 51,  256 => 50,  254 => 47,  251 => 46,  241 => 45,  228 => 39,  222 => 36,  219 => 35,  213 => 34,  207 => 31,  204 => 30,  201 => 29,  196 => 28,  191 => 26,  186 => 24,  183 => 23,  181 => 22,  176 => 19,  166 => 18,  155 => 12,  145 => 11,  132 => 8,  122 => 7,  103 => 5,  89 => 60,  87 => 57,  83 => 55,  81 => 45,  77 => 43,  75 => 18,  69 => 14,  67 => 11,  64 => 10,  62 => 7,  57 => 5,  51 => 1,);
+        return array (  301 => 51,  291 => 50,  280 => 45,  270 => 44,  259 => 41,  249 => 40,  239 => 47,  237 => 44,  234 => 43,  232 => 40,  229 => 39,  219 => 38,  206 => 32,  200 => 29,  194 => 26,  189 => 25,  183 => 23,  181 => 22,  176 => 19,  166 => 18,  155 => 12,  145 => 11,  132 => 8,  122 => 7,  103 => 5,  89 => 53,  87 => 50,  83 => 48,  81 => 38,  77 => 36,  75 => 18,  69 => 14,  67 => 11,  64 => 10,  62 => 7,  57 => 5,  51 => 1,);
     }
 
     public function getSourceContext()
@@ -364,20 +342,13 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
                     <label class=\"label\">NOM</label>
                     <ul>
                         {% if not app.user %}
-                            <li class=\"nav-item\">
-                                <a href=\"{{ path('security_login') }}\" class=\"nav-link\">Connexion</a>
-                            </li>
-                            <li><a href=\"{{ path('security_registration') }}\">Inscription</a></li>
+                            {{ render(controller('App\\\\Controller\\\\SiteController::routeAnonyme')) }}
                         {% else %}
-                            {% for roles in app.user.roles %}
-                                {% if roles == \"ROLE_ADMIN\" %}
-                                    <li class=\"nav-item\">
-                                        <a href=\"{{ path('admin_users') }}\" class=\"nav-link\">Administration</a>
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
-                            <li class=\"nav-item\">
-                                <a href=\"{{ path('security_logout') }}\" class=\"nav-link\">Déconnexion</a>
+                            {{ render(controller('App\\\\Controller\\\\SiteController::routeAdmin')) }}
+                            {{ render(controller('App\\\\Controller\\\\SiteController::routeUtilisateur')) }}
+
+                            <li>
+                                <a href=\"{{ path('security_logout') }}\">Déconnexion</a>
                             </li>
                         {% endif %}
 

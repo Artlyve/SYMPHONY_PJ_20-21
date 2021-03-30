@@ -66,7 +66,7 @@ class __TwigTemplate_23724d2fefbe22f44a2692cfe2f9e20fed11f036d23d6ae5e2a54377b13
 
         // line 4
         echo "    <h1>Liste des utilisateurs</h1>
-    <table class=\"table\">
+    <table class=\"table\" style=\"border-spacing: 75px 1rem\">
         <thead>
         <th>ID</th>
         <th>Nom</th>
@@ -141,7 +141,7 @@ $context["role"], "ROLE_CLIENT"))) {
                         <a href=\"";
             // line 34
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_delete_user", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 34)]), "html", null, true);
-            echo "\">Delete</a></td>
+            echo "\">Supprimer</a></td>
                 </tr>
             ";
             $context['_iterated'] = true;
@@ -189,7 +189,7 @@ $context["role"], "ROLE_CLIENT"))) {
 
 {% block vue %}
     <h1>Liste des utilisateurs</h1>
-    <table class=\"table\">
+    <table class=\"table\" style=\"border-spacing: 75px 1rem\">
         <thead>
         <th>ID</th>
         <th>Nom</th>
@@ -218,7 +218,7 @@ $context["role"], "ROLE_CLIENT"))) {
                     </td>
                     <td>{{ user.birthday | date('d/m/Y')  }}</td>
                     <td><a href=\"{{ path('admin_edit_user', {'id' : user.id})  }}\">Modifier</a>
-                        <a href=\"{{ path('admin_delete_user', {'id' : user.id})  }}\">Delete</a></td>
+                        <a href=\"{{ path('admin_delete_user', {'id' : user.id})  }}\">Supprimer</a></td>
                 </tr>
             {% else %}
                 <tr>

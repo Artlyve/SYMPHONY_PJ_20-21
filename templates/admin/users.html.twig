@@ -2,7 +2,7 @@
 
 {% block vue %}
     <h1>Liste des utilisateurs</h1>
-    <table class="table">
+    <table class="table" style="border-spacing: 75px 1rem">
         <thead>
         <th>ID</th>
         <th>Nom</th>
@@ -31,7 +31,7 @@
                     </td>
                     <td>{{ user.birthday | date('d/m/Y')  }}</td>
                     <td><a href="{{ path('admin_edit_user', {'id' : user.id})  }}">Modifier</a>
-                        <a href="{{ path('admin_delete_user', {'id' : user.id})  }}">Delete</a></td>
+                        <a href="{{ path('admin_delete_user', {'id' : user.id})  }}">Supprimer</a></td>
                 </tr>
             {% else %}
                 <tr>
