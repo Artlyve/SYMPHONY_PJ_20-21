@@ -73,19 +73,19 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
             ";
         // line 18
         $this->displayBlock('header', $context, $blocks);
-        // line 35
+        // line 43
         echo "        </header>
         <div class=\"vue\">
             ";
-        // line 37
+        // line 45
         $this->displayBlock('body', $context, $blocks);
-        // line 47
+        // line 55
         echo "        </div>
         <footer class=\"footer\">
             ";
-        // line 49
+        // line 57
         $this->displayBlock('footer', $context, $blocks);
-        // line 52
+        // line 60
         echo "
         </footer>
     </body>
@@ -186,21 +186,46 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login");
             echo "\" class=\"nav-link\">Connexion</a>
                             </li>
+                            <li><a href=\"";
+            // line 26
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_registration");
+            echo "\">Inscription</a></li>
                         ";
         } else {
-            // line 27
+            // line 28
+            echo "                            ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 28, $this->source); })()), "user", [], "any", false, false, false, 28), "roles", [], "any", false, false, false, 28));
+            foreach ($context['_seq'] as $context["_key"] => $context["roles"]) {
+                // line 29
+                echo "                                ";
+                if ((0 === twig_compare($context["roles"], "ROLE_ADMIN"))) {
+                    // line 30
+                    echo "                                    <li class=\"nav-item\">
+                                        <a href=\"";
+                    // line 31
+                    echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users");
+                    echo "\" class=\"nav-link\">Administration</a>
+                                    </li>
+                                ";
+                }
+                // line 34
+                echo "                            ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['roles'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 35
             echo "                            <li class=\"nav-item\">
                                 <a href=\"";
-            // line 28
+            // line 36
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
             echo "\" class=\"nav-link\">Déconnexion</a>
                             </li>
                         ";
         }
-        // line 31
-        echo "                        <li><a href=\"";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_registration");
-        echo "\">Inscripion</a></li>
+        // line 39
+        echo "
                     </ul>
                 </nav>
             ";
@@ -212,7 +237,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
 
     }
 
-    // line 37
+    // line 45
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -222,17 +247,17 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 38
+        // line 46
         echo "                <h1>
                     ";
-        // line 39
+        // line 47
         $this->displayBlock('titre_principal', $context, $blocks);
-        // line 42
+        // line 50
         echo "                </h1>
                 ";
-        // line 43
+        // line 51
         $this->displayBlock('vue', $context, $blocks);
-        // line 46
+        // line 54
         echo "            ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -242,7 +267,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
 
     }
 
-    // line 39
+    // line 47
     public function block_titre_principal($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -252,7 +277,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "titre_principal"));
 
-        // line 40
+        // line 48
         echo "
                     ";
         
@@ -263,7 +288,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
 
     }
 
-    // line 43
+    // line 51
     public function block_vue($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -273,7 +298,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "vue"));
 
-        // line 44
+        // line 52
         echo "
                 ";
         
@@ -284,7 +309,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
 
     }
 
-    // line 49
+    // line 57
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -294,7 +319,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 50
+        // line 58
         echo "
             ";
         
@@ -312,7 +337,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
 
     public function getDebugInfo()
     {
-        return array (  298 => 50,  288 => 49,  277 => 44,  267 => 43,  256 => 40,  246 => 39,  236 => 46,  234 => 43,  231 => 42,  229 => 39,  226 => 38,  216 => 37,  201 => 31,  195 => 28,  192 => 27,  186 => 24,  183 => 23,  181 => 22,  176 => 19,  166 => 18,  155 => 12,  145 => 11,  132 => 8,  122 => 7,  103 => 5,  89 => 52,  87 => 49,  83 => 47,  81 => 37,  77 => 35,  75 => 18,  69 => 14,  67 => 11,  64 => 10,  62 => 7,  57 => 5,  51 => 1,);
+        return array (  323 => 58,  313 => 57,  302 => 52,  292 => 51,  281 => 48,  271 => 47,  261 => 54,  259 => 51,  256 => 50,  254 => 47,  251 => 46,  241 => 45,  228 => 39,  222 => 36,  219 => 35,  213 => 34,  207 => 31,  204 => 30,  201 => 29,  196 => 28,  191 => 26,  186 => 24,  183 => 23,  181 => 22,  176 => 19,  166 => 18,  155 => 12,  145 => 11,  132 => 8,  122 => 7,  103 => 5,  89 => 60,  87 => 57,  83 => 55,  81 => 45,  77 => 43,  75 => 18,  69 => 14,  67 => 11,  64 => 10,  62 => 7,  57 => 5,  51 => 1,);
     }
 
     public function getSourceContext()
@@ -342,12 +367,20 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
                             <li class=\"nav-item\">
                                 <a href=\"{{ path('security_login') }}\" class=\"nav-link\">Connexion</a>
                             </li>
+                            <li><a href=\"{{ path('security_registration') }}\">Inscription</a></li>
                         {% else %}
+                            {% for roles in app.user.roles %}
+                                {% if roles == \"ROLE_ADMIN\" %}
+                                    <li class=\"nav-item\">
+                                        <a href=\"{{ path('admin_users') }}\" class=\"nav-link\">Administration</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
                             <li class=\"nav-item\">
                                 <a href=\"{{ path('security_logout') }}\" class=\"nav-link\">Déconnexion</a>
                             </li>
                         {% endif %}
-                        <li><a href=\"{{ path('security_registration') }}\">Inscripion</a></li>
+
                     </ul>
                 </nav>
             {% endblock %}

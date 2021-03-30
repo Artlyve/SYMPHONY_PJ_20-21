@@ -23,12 +23,20 @@
                             <li class="nav-item">
                                 <a href="{{ path('security_login') }}" class="nav-link">Connexion</a>
                             </li>
+                            <li><a href="{{ path('security_registration') }}">Inscription</a></li>
                         {% else %}
+                            {% for roles in app.user.roles %}
+                                {% if roles == "ROLE_ADMIN" %}
+                                    <li class="nav-item">
+                                        <a href="{{ path('admin_users') }}" class="nav-link">Administration</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
                             <li class="nav-item">
                                 <a href="{{ path('security_logout') }}" class="nav-link">Déconnexion</a>
                             </li>
                         {% endif %}
-                        <li><a href="{{ path('security_registration') }}">Inscripion</a></li>
+
                     </ul>
                 </nav>
             {% endblock %}

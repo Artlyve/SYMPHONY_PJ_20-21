@@ -23,8 +23,9 @@
                         {% for role in user.roles %}
                             {% if role == "ROLE_ADMIN" %}
                                 Administrateur
-                            {% else %}
+                            {% elseif role == "ROLE_CLIENT" %}
                                 Client
+                            {% else%}
                             {% endif %}
                         {% endfor %}
                     </td>
