@@ -33,8 +33,9 @@ class AdminController extends AbstractController
      * @param UserRepository $users
      * @return Response
      */
-    public function usersList(UserRepository $users): Response
+    public function usersList(UserRepository $users, Request $request): Response
     {
+        dump($request);
         return $this->render('admin/users.html.twig', [
             'users' => $users->findAll(),
         ]);
@@ -67,6 +68,29 @@ class AdminController extends AbstractController
         return $this->render('admin/edituser.html.twig', [
             'form' => $form->createView(),
         ]);
+    }
+
+
+    /**
+     *  Supprimer un utilisateur
+     *
+     *
+     * @Route("/utilisateur/supprimer/{id<\d+>}", name="delete_user")
+     * @param User $user
+     * @param Request $request
+     * @return Response
+     */
+    public function deleteUser(User $user, Request $request): Response
+    {
+
+
+        $em = $this->em;
+        $em->remove($user);
+        //$em->persist($user);
+        $em->flush();
+        $this->addFlash('message', 'Utilisateur modifié avec succès');
+
+        return $this->redirectToRoute('admin_users');
     }
 
 

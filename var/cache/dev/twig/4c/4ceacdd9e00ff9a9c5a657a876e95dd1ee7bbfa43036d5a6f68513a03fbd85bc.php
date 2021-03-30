@@ -91,15 +91,11 @@ class __TwigTemplate_4671fef070c02bbf00b528d0b03968a38bd8345f58f50262fd6fcadd7ee
         // line 11
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()), "password", [], "any", false, false, false, 11), 'row', ["label" => "Mot de passe ", "attr" => ["placeholder" => "mot de passe"]]);
         echo "<br>
-    ";
-        // line 12
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), "confirm_password", [], "any", false, false, false, 12), 'row', ["label" => "Confirmation ", "attr" => ["placeholder" => "confirmation"]]);
-        echo "<br>
-    <button type=\"submit\" class=\"btn btn-success\">Inscrition !</button><br>
+    <button type=\"submit\" class=\"btn btn-success\">Inscription !</button><br>
 
     ";
-        // line 15
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), 'form_end');
+        // line 14
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 14, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -122,7 +118,7 @@ class __TwigTemplate_4671fef070c02bbf00b528d0b03968a38bd8345f58f50262fd6fcadd7ee
 
     public function getDebugInfo()
     {
-        return array (  102 => 15,  96 => 12,  92 => 11,  88 => 10,  84 => 9,  80 => 8,  76 => 7,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  98 => 14,  92 => 11,  88 => 10,  84 => 9,  80 => 8,  76 => 7,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -138,8 +134,7 @@ class __TwigTemplate_4671fef070c02bbf00b528d0b03968a38bd8345f58f50262fd6fcadd7ee
     {{ form_row(form.birthday, {'label':'Date de naissance ', 'attr' : {'placeholder' : 'Votre date de naissance'}}) }}<br>
     {{ form_row(form.username, {'label':'identifant ', 'attr' : {'placeholder' : 'Votre identidiant'}}) }}<br>
     {{ form_row(form.password, {'label':'Mot de passe ', 'attr' : {'placeholder' : 'mot de passe'}}) }}<br>
-    {{ form_row(form.confirm_password, {'label':'Confirmation ','attr' : {'placeholder' : 'confirmation'}}) }}<br>
-    <button type=\"submit\" class=\"btn btn-success\">Inscrition !</button><br>
+    <button type=\"submit\" class=\"btn btn-success\">Inscription !</button><br>
 
     {{ form_end(form) }}
 {% endblock %}", "security/registration.html.twig", "C:\\wamp64\\www\\projet\\templates\\security\\registration.html.twig");

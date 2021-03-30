@@ -44,11 +44,10 @@ class User implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string", length=64, options={"comment"="mot de passe crypté : il faut une taille assez grande pour ne pas le tronquer"})
-     * @Assert\EqualTo(propertyPath="confirm_password", message="password failed")
      */
     private $password;
 
-    public $confirm_password;
+
 
     /**
      * @ORM\Column(type="date", nullable=true)
@@ -145,6 +144,9 @@ class User implements UserInterface
 
         return $this;
     }
+
+
+
 
     /**
      * Returning a salt is only needed, if you are not using a modern

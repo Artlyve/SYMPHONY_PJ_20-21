@@ -37,8 +37,11 @@ return [
                     .')'
                 .')'
                 .'|/a(?'
-                    .'|dmin/utilisateur/modifier/(\\d+)(*:205)'
-                    .'|jout/(\\d+)(*:223)'
+                    .'|dmin/utilisateur/(?'
+                        .'|modifier/(\\d+)(*:208)'
+                        .'|supprimer/(\\d+)(*:231)'
+                    .')'
+                    .'|jout/(\\d+)(*:250)'
                 .')'
             .')/?$}sDu',
     ],
@@ -50,8 +53,9 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        205 => [[['_route' => 'admin_edit_user', '_controller' => 'App\\Controller\\AdminController::editUser'], ['id'], null, null, false, true, null]],
-        223 => [
+        208 => [[['_route' => 'admin_edit_user', '_controller' => 'App\\Controller\\AdminController::editUser'], ['id'], null, null, false, true, null]],
+        231 => [[['_route' => 'admin_delete_user', '_controller' => 'App\\Controller\\AdminController::deleteUser'], ['id'], null, null, false, true, null]],
+        250 => [
             [['_route' => 'add', '_controller' => 'App\\Controller\\SiteController::add'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
