@@ -14,12 +14,29 @@
     </head>
 
     <body>
+    {% block header %}
         <header class="header">
-            {% block header %}
+            {# en fonction du role(client/admin) de l'utilisateur une image lui est donnée de même pour ceux qui ne sont pas inscrit #}
+            {% if not app.user %}
+                <img style="width:100%"  src="{{ asset('Images/anonymous.jpg') }}" alt="anonymous">
+
+            {% else %}
+                {% for role in app.user.roles %}
+                    {% if role=="ROLE_ADMIN" %}
+                        <img style="width:100%"  src="{{ asset('Images/admin.jpg') }}" alt="admin">
+
+                    {% elseif role=="ROLE_CLIENT" %}
+                        <img style="width:100%" src="{{ asset('Images/user.jpg') }}" alt="admin">
+
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
                 <nav class="nav">
                     <label class="label">NOM</label>
                     <ul>
+                        {#en fonction de si on est connecté ou non, un menu s'affiche pour l'utilisateur#}
                         {% if not app.user %}
+
                             {{ render(controller('App\\Controller\\SiteController::routeAnonyme')) }}
                         {% else %}
                             {{ render(controller('App\\Controller\\SiteController::routeAdmin')) }}
@@ -42,13 +59,27 @@
                     {% endblock %}
                 </h1>
                 {% block vue %}
+                    <p>Bienvenue sur notre site de vente pierre présieuse !</p>
+                    {% if not app.user %}
+                    <span>ANONYME: Je vois que vous n'êtes pas connecté sur notre site. N'hésitez pas à vous inscrire ou vous connecter !</span>
 
+                    {% else %}
+                    {% for role in app.user.roles %}
+                        {% if role=="ROLE_ADMIN" %}
+                            <span>ADMIN: Bonjour maitre, prenez soins de nos utilisateurs !</span>
+
+                        {% elseif role=="ROLE_CLIENT" %}
+                            <span>CLIENT: Salut, N'hésite pas à regarder nos produits peut être que tu auras un coup de coeur !</span>
+
+                        {% endif %}
+                    {% endfor %}
+                    {% endif %}
                 {% endblock %}
             {% endblock %}
         </div>
-        <footer class="footer">
+        <footer style="position: absolute;bottom: 0;left: 0;right: 0;">
             {% block footer %}
-
+                <img style="width:100%"  src="{{ asset('Images/footer.jpg') }}" alt="anonymous">
             {% endblock %}
 
         </footer>

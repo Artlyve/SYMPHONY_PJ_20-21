@@ -13,6 +13,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
+/* Ce controller est pour l'utilisation des Administrateur du site */
+
 /**
  * @Route("/admin", name="admin_")
  */
