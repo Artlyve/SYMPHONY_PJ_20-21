@@ -21,7 +21,7 @@ class SiteController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('base.html.twig');
+        return $this->render('base/base.html.twig');
     }
 
 
