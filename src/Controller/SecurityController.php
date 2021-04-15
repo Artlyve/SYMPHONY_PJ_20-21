@@ -15,6 +15,8 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 /* Ce controller gère essentiellement l'authentification/inscrition de l'utilisateur */
 
 /**
+ * Toutes les routes liées à la connexion commenceront par /security
+ *
  * @Route("/security", name="security_")
  */
 class SecurityController extends AbstractController

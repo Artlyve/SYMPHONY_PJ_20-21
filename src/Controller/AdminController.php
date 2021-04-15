@@ -17,6 +17,8 @@ use Symfony\Component\Routing\Annotation\Route;
 /* Ce controller est pour l'utilisation des Administrateur du site */
 
 /**
+ * Toutes les routes liées à l'administration commencera par /admin
+ *
  * @Route("/admin", name="admin_")
  */
 class AdminController extends AbstractController

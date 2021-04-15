@@ -54,6 +54,11 @@ class User implements UserInterface
      */
     private $birthday;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Panier::class, inversedBy="user")
+     */
+    private $panier;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -176,6 +181,18 @@ class User implements UserInterface
     public function setBirthday(?\DateTimeInterface $birthday): self
     {
         $this->birthday = $birthday;
+
+        return $this;
+    }
+
+    public function getPanier(): ?Panier
+    {
+        return $this->panier;
+    }
+
+    public function setPanier(?Panier $panier): self
+    {
+        $this->panier = $panier;
 
         return $this;
     }

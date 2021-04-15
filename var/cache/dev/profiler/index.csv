@@ -64,3 +64,6 @@ abf88f,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_
 5b7cf2,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CSiteController%253A%253ArouteAdmin,1618414558,b2a8c0,200
 7ad57c,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CSiteController%253A%253ArouteUtilisateur,1618414558,b2a8c0,200
 b2a8c0,::1,GET,http://localhost/projet/public/,1618414558,,200
+243091,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CSiteController%253A%253ArouteAdmin,1618491874,61311f,200
+b9622f,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CSiteController%253A%253ArouteUtilisateur,1618491874,61311f,200
+61311f,::1,GET,http://localhost/projet/public/,1618491874,,200
