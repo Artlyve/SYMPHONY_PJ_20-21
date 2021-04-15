@@ -89,8 +89,12 @@ class __TwigTemplate_568272ca22eee7dfb7aef8969c58c6a8cb5ddd0ed69d23caea14496cab4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 7
-        echo "            <link href=\"";
+        echo "    <link href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("CSS/style.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" >
+    <link href=\"";
+        // line 8
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("CSS/style_text.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" >
 ";
         
@@ -101,7 +105,7 @@ class __TwigTemplate_568272ca22eee7dfb7aef8969c58c6a8cb5ddd0ed69d23caea14496cab4
 
     }
 
-    // line 11
+    // line 12
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -111,27 +115,27 @@ class __TwigTemplate_568272ca22eee7dfb7aef8969c58c6a8cb5ddd0ed69d23caea14496cab4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 12
+        // line 13
         echo "    ";
         $this->displayBlock('header', $context, $blocks);
-        // line 48
+        // line 49
         echo "        </header>
 
 
         <div class=\"vue\">
 
                 ";
-        // line 53
+        // line 54
         $this->displayBlock('vue', $context, $blocks);
-        // line 70
+        // line 75
         echo "        </div>
 
 
         <footer style=\"position: absolute;bottom: 0;left: 0;right: 0;\">
             ";
-        // line 74
+        // line 79
         $this->displayBlock('footer', $context, $blocks);
-        // line 77
+        // line 82
         echo "
         </footer>
 
@@ -144,7 +148,7 @@ class __TwigTemplate_568272ca22eee7dfb7aef8969c58c6a8cb5ddd0ed69d23caea14496cab4
 
     }
 
-    // line 12
+    // line 13
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -154,85 +158,85 @@ class __TwigTemplate_568272ca22eee7dfb7aef8969c58c6a8cb5ddd0ed69d23caea14496cab4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 13
+        // line 14
         echo "        <header class=\"header\">
             ";
-        // line 15
+        // line 16
         echo "            ";
-        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "user", [], "any", false, false, false, 15)) {
-            // line 16
+        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "user", [], "any", false, false, false, 16)) {
+            // line 17
             echo "                <img style=\"width:100%\"  src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("Images/anonymous.jpg"), "html", null, true);
             echo "\" alt=\"anonymous\">
 
             ";
         } else {
-            // line 19
+            // line 20
             echo "                ";
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19), "roles", [], "any", false, false, false, 19));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "user", [], "any", false, false, false, 20), "roles", [], "any", false, false, false, 20));
             foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
-                // line 20
+                // line 21
                 echo "                    ";
                 if ((0 === twig_compare($context["role"], "ROLE_ADMIN"))) {
-                    // line 21
+                    // line 22
                     echo "                        <img style=\"width:100%\"  src=\"";
                     echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("Images/admin.jpg"), "html", null, true);
                     echo "\" alt=\"admin\">
 
                     ";
-                } elseif ((0 === twig_compare(                // line 23
+                } elseif ((0 === twig_compare(                // line 24
 $context["role"], "ROLE_CLIENT"))) {
-                    // line 24
+                    // line 25
                     echo "                        <img style=\"width:100%\" src=\"";
                     echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("Images/user.jpg"), "html", null, true);
                     echo "\" alt=\"admin\">
 
                     ";
                 }
-                // line 27
+                // line 28
                 echo "                ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 28
+            // line 29
             echo "            ";
         }
-        // line 29
+        // line 30
         echo "                <nav class=\"nav\">
                     <label class=\"label\">UEL</label>
                     <ul>
                         ";
-        // line 33
+        // line 34
         echo "                        ";
-        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 33, $this->source); })()), "user", [], "any", false, false, false, 33)) {
-            // line 34
+        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 34, $this->source); })()), "user", [], "any", false, false, false, 34)) {
+            // line 35
             echo "
                             ";
-            // line 35
+            // line 36
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\SiteController::routeAnonyme"));
             echo "
                         ";
         } else {
-            // line 37
+            // line 38
             echo "                            ";
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\SiteController::routeAdmin"));
             echo "
                             ";
-            // line 38
+            // line 39
             echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\SiteController::routeUtilisateur"));
             echo "
 
                             <li>
                                 <a href=\"";
-            // line 41
+            // line 42
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
             echo "\">Déconnexion</a>
                             </li>
                         ";
         }
-        // line 44
+        // line 45
         echo "
                     </ul>
                 </nav>
@@ -245,7 +249,7 @@ $context["role"], "ROLE_CLIENT"))) {
 
     }
 
-    // line 53
+    // line 54
     public function block_vue($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -255,45 +259,49 @@ $context["role"], "ROLE_CLIENT"))) {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "vue"));
 
-        // line 54
-        echo "                    <p>Bienvenue sur notre site de vente de pierre précieuse !</p>
-                    ";
         // line 55
-        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 55, $this->source); })()), "user", [], "any", false, false, false, 55)) {
-            // line 56
-            echo "                    <span>ANONYME: Je vois que vous n'êtes pas connecté sur notre site. N'hésitez pas à vous inscrire ou vous connecter !</span>
-
+        echo "                    <h1>Bienvenue sur notre site de vente de pierre précieuse !</h1>
+                    ";
+        // line 56
+        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 56, $this->source); })()), "user", [], "any", false, false, false, 56)) {
+            // line 57
+            echo "                        <br>
+                        <span>SESSION ANONYME</span>
+                        <p>Je vois que vous n'êtes pas connecté sur notre site. N'hésitez pas à vous inscrire ou vous connecter !</p>
                     ";
         } else {
-            // line 59
+            // line 61
             echo "                    ";
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 59, $this->source); })()), "user", [], "any", false, false, false, 59), "roles", [], "any", false, false, false, 59));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 61, $this->source); })()), "user", [], "any", false, false, false, 61), "roles", [], "any", false, false, false, 61));
             foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
-                // line 60
+                // line 62
                 echo "                        ";
                 if ((0 === twig_compare($context["role"], "ROLE_ADMIN"))) {
-                    // line 61
-                    echo "                            <span>ADMIN: Bonjour maitre, prenez soins de nos utilisateurs !</span>
+                    // line 63
+                    echo "                            <br>
+                            <span>SESSION ADMIN</span>
+                            <p>Bonjour maitre, prenez soins de nos utilisateurs !</p>
 
                         ";
-                } elseif ((0 === twig_compare(                // line 63
+                } elseif ((0 === twig_compare(                // line 67
 $context["role"], "ROLE_CLIENT"))) {
-                    // line 64
-                    echo "                            <span>CLIENT: Salut, N'hésite pas à regarder nos produits peut être que tu auras un coup de coeur !</span>
-
+                    // line 68
+                    echo "                            <br>
+                            <span>SESSION CLIENT</span>
+                            <p> Salut, N'hésite pas à regarder nos produits peut être que tu auras un coup de coeur !</p>
                         ";
                 }
-                // line 67
+                // line 72
                 echo "                    ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 68
+            // line 73
             echo "                    ";
         }
-        // line 69
+        // line 74
         echo "                ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -303,7 +311,7 @@ $context["role"], "ROLE_CLIENT"))) {
 
     }
 
-    // line 74
+    // line 79
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -313,7 +321,7 @@ $context["role"], "ROLE_CLIENT"))) {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 75
+        // line 80
         echo "                <img style=\"width:100%\"  src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("Images/footer.jpg"), "html", null, true);
         echo "\" alt=\"anonymous\">
@@ -338,7 +346,7 @@ $context["role"], "ROLE_CLIENT"))) {
 
     public function getDebugInfo()
     {
-        return array (  317 => 75,  307 => 74,  297 => 69,  294 => 68,  288 => 67,  283 => 64,  281 => 63,  277 => 61,  274 => 60,  269 => 59,  264 => 56,  262 => 55,  259 => 54,  249 => 53,  236 => 44,  230 => 41,  224 => 38,  219 => 37,  214 => 35,  211 => 34,  208 => 33,  203 => 29,  200 => 28,  194 => 27,  187 => 24,  185 => 23,  179 => 21,  176 => 20,  171 => 19,  164 => 16,  161 => 15,  158 => 13,  148 => 12,  135 => 77,  133 => 74,  127 => 70,  125 => 53,  118 => 48,  115 => 12,  105 => 11,  92 => 7,  82 => 6,  63 => 4,  40 => 2,);
+        return array (  325 => 80,  315 => 79,  305 => 74,  302 => 73,  296 => 72,  290 => 68,  288 => 67,  282 => 63,  279 => 62,  274 => 61,  268 => 57,  266 => 56,  263 => 55,  253 => 54,  240 => 45,  234 => 42,  228 => 39,  223 => 38,  218 => 36,  215 => 35,  212 => 34,  207 => 30,  204 => 29,  198 => 28,  191 => 25,  189 => 24,  183 => 22,  180 => 21,  175 => 20,  168 => 17,  165 => 16,  162 => 14,  152 => 13,  139 => 82,  137 => 79,  131 => 75,  129 => 54,  122 => 49,  119 => 13,  109 => 12,  97 => 8,  92 => 7,  82 => 6,  63 => 4,  40 => 2,);
     }
 
     public function getSourceContext()
@@ -349,7 +357,8 @@ $context["role"], "ROLE_CLIENT"))) {
 {% block title %}Uel Vente de pierre précieuse{% endblock %}
 
 {% block stylesheets %}
-            <link href=\"{{ asset('CSS/style.css') }}\" rel=\"stylesheet\" >
+    <link href=\"{{ asset('CSS/style.css') }}\" rel=\"stylesheet\" >
+    <link href=\"{{ asset('CSS/style_text.css') }}\" rel=\"stylesheet\" >
 {% endblock %}
 
 
@@ -396,18 +405,22 @@ $context["role"], "ROLE_CLIENT"))) {
         <div class=\"vue\">
 
                 {% block vue %}
-                    <p>Bienvenue sur notre site de vente de pierre précieuse !</p>
+                    <h1>Bienvenue sur notre site de vente de pierre précieuse !</h1>
                     {% if not app.user %}
-                    <span>ANONYME: Je vois que vous n'êtes pas connecté sur notre site. N'hésitez pas à vous inscrire ou vous connecter !</span>
-
+                        <br>
+                        <span>SESSION ANONYME</span>
+                        <p>Je vois que vous n'êtes pas connecté sur notre site. N'hésitez pas à vous inscrire ou vous connecter !</p>
                     {% else %}
                     {% for role in app.user.roles %}
                         {% if role==\"ROLE_ADMIN\" %}
-                            <span>ADMIN: Bonjour maitre, prenez soins de nos utilisateurs !</span>
+                            <br>
+                            <span>SESSION ADMIN</span>
+                            <p>Bonjour maitre, prenez soins de nos utilisateurs !</p>
 
                         {% elseif role==\"ROLE_CLIENT\" %}
-                            <span>CLIENT: Salut, N'hésite pas à regarder nos produits peut être que tu auras un coup de coeur !</span>
-
+                            <br>
+                            <span>SESSION CLIENT</span>
+                            <p> Salut, N'hésite pas à regarder nos produits peut être que tu auras un coup de coeur !</p>
                         {% endif %}
                     {% endfor %}
                     {% endif %}

@@ -16,7 +16,10 @@ class SiteController extends AbstractController
     public function __construct(EntityManagerInterface $entityManager){
         $this->em = $entityManager;
     }
+
     /**
+     * Page d'accueil de notre site
+     *
      * @Route("/", name="site")
      */
     public function index(): Response
@@ -43,6 +46,23 @@ class SiteController extends AbstractController
         return $this->redirectToRoute('site');
     }
 
+    /**
+     * Supprimer un utilisateur
+     *
+     * @Route("/supprimer/{id<\d+>}", name="del")
+     * @param User $user
+     * @return Response
+     */
+    public function del(User $user): Response
+    {
+        $em = $this->em;
+
+        $em->remove($user);
+        $em->flush();
+        return $this->redirectToRoute('site');
+    }
+
+    
 
     public function routeAdmin(): Response
     {

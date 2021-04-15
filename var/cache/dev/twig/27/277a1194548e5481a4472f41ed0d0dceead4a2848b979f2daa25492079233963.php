@@ -32,7 +32,7 @@ class __TwigTemplate_23724d2fefbe22f44a2692cfe2f9e20fed11f036d23d6ae5e2a54377b13
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "base/base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -44,7 +44,7 @@ class __TwigTemplate_23724d2fefbe22f44a2692cfe2f9e20fed11f036d23d6ae5e2a54377b13
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/users.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "admin/users.html.twig", 1);
+        $this->parent = $this->loadTemplate("base/base.html.twig", "admin/users.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -185,7 +185,7 @@ $context["role"], "ROLE_CLIENT"))) {
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'base/base.html.twig' %}
 
 {% block vue %}
     <h1>Liste des utilisateurs</h1>

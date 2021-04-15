@@ -4,7 +4,8 @@
 {% block title %}Uel Vente de pierre précieuse{% endblock %}
 
 {% block stylesheets %}
-            <link href="{{ asset('CSS/style.css') }}" rel="stylesheet" >
+    <link href="{{ asset('CSS/style.css') }}" rel="stylesheet" >
+    <link href="{{ asset('CSS/style_text.css') }}" rel="stylesheet" >
 {% endblock %}
 
 
@@ -51,18 +52,22 @@
         <div class="vue">
 
                 {% block vue %}
-                    <p>Bienvenue sur notre site de vente de pierre précieuse !</p>
+                    <h1>Bienvenue sur notre site de vente de pierre précieuse !</h1>
                     {% if not app.user %}
-                    <span>ANONYME: Je vois que vous n'êtes pas connecté sur notre site. N'hésitez pas à vous inscrire ou vous connecter !</span>
-
+                        <br>
+                        <span>SESSION ANONYME</span>
+                        <p>Je vois que vous n'êtes pas connecté sur notre site. N'hésitez pas à vous inscrire ou vous connecter !</p>
                     {% else %}
                     {% for role in app.user.roles %}
                         {% if role=="ROLE_ADMIN" %}
-                            <span>ADMIN: Bonjour maitre, prenez soins de nos utilisateurs !</span>
+                            <br>
+                            <span>SESSION ADMIN</span>
+                            <p>Bonjour maitre, prenez soins de nos utilisateurs !</p>
 
                         {% elseif role=="ROLE_CLIENT" %}
-                            <span>CLIENT: Salut, N'hésite pas à regarder nos produits peut être que tu auras un coup de coeur !</span>
-
+                            <br>
+                            <span>SESSION CLIENT</span>
+                            <p> Salut, N'hésite pas à regarder nos produits peut être que tu auras un coup de coeur !</p>
                         {% endif %}
                     {% endfor %}
                     {% endif %}
