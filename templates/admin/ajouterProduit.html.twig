@@ -1,0 +1,16 @@
+{% extends 'base/base.html.twig' %}
+
+{% block vue %}
+
+    {{ form_start(form) }}
+    {{ form_row(form.libelle, {'attr': {'placeholder': "Nom du produit"}}) }}
+    {{ form_row(form.prix, {'attr': {'placeholder': "Prix du produit"}}) }}
+    {{ form_row(form.quantite, {'attr': {'placeholder': "Quantite du produit"}}) }}
+    <button type="submit">
+        Ajouter le produit
+    </button>
+
+    {{ form_end(form) }}
+
+
+{% endblock %}

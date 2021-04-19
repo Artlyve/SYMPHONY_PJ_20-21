@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Produit;
 use App\Entity\User;
 use App\Form\EditUserType;
+use App\Form\ProduitType;
 use App\Repository\UserRepository;
 use App\Repository\UsersRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -96,6 +98,36 @@ class AdminController extends AbstractController
         $this->addFlash('message', 'Utilisateur modifié avec succès');
 
         return $this->redirectToRoute('admin_users');
+    }
+
+    /**
+     *  Ajouter un produit dans la table des produits
+     *
+     *
+     * @Route("/produit/ajouter", name="add_product")
+     * @param Request $request
+     * @return Response
+     */
+    public function addProduct(Request $request): Response
+    {
+
+        $produit = new Produit();
+        $form = $this->createForm(ProduitType::class, $produit);
+        $form->handleRequest($request);
+
+        $em = $this->em;
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            $em->persist($produit);
+            $em->flush();
+            $this->addFlash('message', 'Produit bien enregistré');
+            return $this->redirectToRoute('site');
+
+        }
+        return $this->render('admin/ajouterProduit.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
 

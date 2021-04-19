@@ -52,6 +52,10 @@ class __TwigTemplate_36f78b91a91efa6fd6bca2c81f85601c22827a16cdffc958836af7ef1cd
                 // line 4
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users");
                 echo "\">Administration</a>
+            <a href=\"";
+                // line 5
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_add_product");
+                echo "\">Ajouter un produit</a>
         </li>
     ";
             }
@@ -79,7 +83,7 @@ class __TwigTemplate_36f78b91a91efa6fd6bca2c81f85601c22827a16cdffc958836af7ef1cd
 
     public function getDebugInfo()
     {
-        return array (  53 => 4,  50 => 3,  47 => 2,  43 => 1,);
+        return array (  57 => 5,  53 => 4,  50 => 3,  47 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -88,6 +92,7 @@ class __TwigTemplate_36f78b91a91efa6fd6bca2c81f85601c22827a16cdffc958836af7ef1cd
     {% if roles == \"ROLE_ADMIN\" %}
         <li>
             <a href=\"{{ path('admin_users') }}\">Administration</a>
+            <a href=\"{{ path('admin_add_product') }}\">Ajouter un produit</a>
         </li>
     {% endif %}
 {% endfor %}", "menu/admin.html.twig", "C:\\wamp64\\www\\projet\\templates\\menu\\admin.html.twig");
