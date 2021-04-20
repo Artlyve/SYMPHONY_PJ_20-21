@@ -73,62 +73,59 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
             <th>Choix</th>
         </thead>
         <tbody>
-            ";
+        ";
         // line 12
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 12, $this->source); })()));
+        echo "
+
+
+            ";
+        // line 15
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 12, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 15, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 13
-            echo "                <tr>
-                    <td>";
-            // line 14
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "libelle", [], "any", false, false, false, 14), "html", null, true);
-            echo "</td>
-                    <td>";
-            // line 15
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "prix", [], "any", false, false, false, 15), "html", null, true);
-            echo "</td>
-                    <td>";
             // line 16
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 16), "html", null, true);
+            echo "
+                <tr>
+                    <td>";
+            // line 18
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "libelle", [], "any", false, false, false, 18), "html", null, true);
+            echo "</td>
+                    <td>";
+            // line 19
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "prix", [], "any", false, false, false, 19), "html", null, true);
+            echo "</td>
+                    <td>";
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 20), "html", null, true);
             echo "</td>
                     <td>
-                        <select>
-                            ";
-            // line 19
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 19));
-            foreach ($context['_seq'] as $context["_key"] => $context["stock"]) {
-                // line 20
-                echo "                                ";
-                if ((0 !== twig_compare($context["stock"], 0))) {
-                    // line 21
-                    echo "                                <option>
-                                    ";
-                    // line 22
-                    echo twig_escape_filter($this->env, $context["stock"], "html", null, true);
-                    echo "
-                                </option>
+                        <label>
+                            <select>
                                 ";
-                } else {
-                    // line 25
-                    echo "                                ";
-                }
-                // line 26
-                echo "                            ";
+            // line 24
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(range(0, twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 24)));
+            foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+                // line 25
+                echo "                                    <option>";
+                echo twig_escape_filter($this->env, $context["i"], "html", null, true);
+                echo "</option>
+                                ";
             }
             $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['stock'], $context['_parent'], $context['loop']);
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 27
-            echo "                        </select>
+            echo "                            </select>
+                        </label>
                     </td>
                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
+        // line 31
         echo "                    <td colspan=\"4\">
                         <button type=\"submit\">Commander</button>
                     </td>
@@ -156,7 +153,7 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
 
     public function getDebugInfo()
     {
-        return array (  132 => 30,  124 => 27,  118 => 26,  115 => 25,  109 => 22,  106 => 21,  103 => 20,  99 => 19,  93 => 16,  89 => 15,  85 => 14,  82 => 13,  78 => 12,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  129 => 31,  120 => 27,  111 => 25,  107 => 24,  100 => 20,  96 => 19,  92 => 18,  88 => 16,  84 => 15,  78 => 12,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -172,22 +169,23 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
             <th>Choix</th>
         </thead>
         <tbody>
+        {{ dump(products) }}
+
+
             {% for product in products %}
+
                 <tr>
                     <td>{{product.libelle}}</td>
                     <td>{{product.prix}}</td>
                     <td>{{product.quantite}}</td>
                     <td>
-                        <select>
-                            {% for stock in product.quantite %}
-                                {% if stock != 0 %}
-                                <option>
-                                    {{ stock }}
-                                </option>
-                                {% else %}
-                                {% endif %}
-                            {% endfor %}
-                        </select>
+                        <label>
+                            <select>
+                                {% for i in 0..product.quantite %}
+                                    <option>{{ i }}</option>
+                                {% endfor %}
+                            </select>
+                        </label>
                     </td>
                     {% endfor %}
                     <td colspan=\"4\">

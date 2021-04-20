@@ -10,21 +10,19 @@
         </thead>
         <tbody>
             {% for product in products %}
+
                 <tr>
                     <td>{{product.libelle}}</td>
                     <td>{{product.prix}}</td>
                     <td>{{product.quantite}}</td>
                     <td>
-                        <select>
-                            {% for stock in product.quantite %}
-                                {% if stock != 0 %}
-                                <option>
-                                    {{ stock }}
-                                </option>
-                                {% else %}
-                                {% endif %}
-                            {% endfor %}
-                        </select>
+                        <label>
+                            <select>
+                                {% for i in 0..product.quantite %}
+                                    <option>{{ i }}</option>
+                                {% endfor %}
+                            </select>
+                        </label>
                     </td>
                     {% endfor %}
                     <td colspan="4">
