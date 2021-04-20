@@ -65,7 +65,8 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "vue"));
 
         // line 4
-        echo "    <table class=\"table\" style=\"border-spacing: 75px 1rem\">
+        echo "    <form method=\"post\">
+    <table class=\"table\" style=\"border-spacing: 75px 1rem\">
         <thead>
             <th>Libellé</th>
             <th>Prix</th>
@@ -73,41 +74,38 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
             <th>Choix</th>
         </thead>
         <tbody>
-        ";
-        // line 12
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 12, $this->source); })()));
-        echo "
-
-
             ";
-        // line 15
+        // line 13
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 15, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 13, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 16
+            // line 14
             echo "
                 <tr>
                     <td>";
+            // line 16
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "libelle", [], "any", false, false, false, 16), "html", null, true);
+            echo "</td>
+                    <td>";
+            // line 17
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "prix", [], "any", false, false, false, 17), "html", null, true);
+            echo "</td>
+                    <td>";
             // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "libelle", [], "any", false, false, false, 18), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 18), "html", null, true);
             echo "</td>
-                    <td>";
-            // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "prix", [], "any", false, false, false, 19), "html", null, true);
-            echo "</td>
-                    <td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 20), "html", null, true);
-            echo "</td>
+
+
                     <td>
+
                         <label>
                             <select>
                                 ";
-            // line 24
+            // line 25
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(range(0, twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 24)));
+            $context['_seq'] = twig_ensure_traversable(range(0, twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 25)));
             foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-                // line 25
+                // line 26
                 echo "                                    <option>";
                 echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                 echo "</option>
@@ -116,22 +114,23 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 27
+            // line 28
             echo "                            </select>
                         </label>
                     </td>
+
                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
-        echo "                    <td colspan=\"4\">
-                        <button type=\"submit\">Commander</button>
-                    </td>
+        // line 33
+        echo "                        <button type=\"submit\">Commander</button>
+
                 </tr>
         </tbody>
     </table>
+    </form>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -153,7 +152,7 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
 
     public function getDebugInfo()
     {
-        return array (  129 => 31,  120 => 27,  111 => 25,  107 => 24,  100 => 20,  96 => 19,  92 => 18,  88 => 16,  84 => 15,  78 => 12,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  128 => 33,  118 => 28,  109 => 26,  105 => 25,  95 => 18,  91 => 17,  87 => 16,  83 => 14,  79 => 13,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -161,6 +160,7 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
         return new Source("{% extends 'base/base.html.twig'%}
 
 {% block vue %}
+    <form method=\"post\">
     <table class=\"table\" style=\"border-spacing: 75px 1rem\">
         <thead>
             <th>Libellé</th>
@@ -169,16 +169,16 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
             <th>Choix</th>
         </thead>
         <tbody>
-        {{ dump(products) }}
-
-
             {% for product in products %}
 
                 <tr>
                     <td>{{product.libelle}}</td>
                     <td>{{product.prix}}</td>
                     <td>{{product.quantite}}</td>
+
+
                     <td>
+
                         <label>
                             <select>
                                 {% for i in 0..product.quantite %}
@@ -187,13 +187,14 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
                             </select>
                         </label>
                     </td>
+
                     {% endfor %}
-                    <td colspan=\"4\">
                         <button type=\"submit\">Commander</button>
-                    </td>
+
                 </tr>
         </tbody>
     </table>
+    </form>
 {% endblock %}
 ", "produit/productList.html.twig", "C:\\wamp64\\www\\projet\\templates\\produit\\productList.html.twig");
     }
