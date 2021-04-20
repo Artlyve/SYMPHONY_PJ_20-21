@@ -1,6 +1,7 @@
 {% extends 'base/base.html.twig'%}
 
 {% block vue %}
+    <form method="post">
     <table class="table" style="border-spacing: 75px 1rem">
         <thead>
             <th>Libellé</th>
@@ -9,28 +10,33 @@
             <th>Choix</th>
         </thead>
         <tbody>
-        {% for product in products %}
-        <tr>
-            <td>{{product.libelle}}</td>
-            <td>{{product.prix}}</td>
-            <td>{{product.quantite}}</td>
-            <td>
-                {% if product.quantite == 0 %}
-                {% else %}
-                    <select>
-                        {% for i in 0..product.quantite %}
-                            <option>
-                                {{ i }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                {% endif %}
-            </td>
-            {% endfor %}
-        </tr>
+            {% for product in products %}
+
+                <tr>
+                    <td>{{product.libelle}}</td>
+                    <td>{{product.prix}}</td>
+                    <td>{{product.quantite}}</td>
+
+
+                    <td>
+
+                        {% if product.quantite == 0 %}
+                        {% else %}
+                            <select>
+                                {% for i in 0..product.quantite %}
+                                    <option>
+                                        {{ i }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        {% endif %}
+                    </td>
+
+                    {% endfor %}
+                        <button type="submit">Commander</button>
+
+                </tr>
         </tbody>
     </table>
-    <br> <tr colspan="4">
-        <button type="submit">Ajouter</button>
-    </tr>
+    </form>
 {% endblock %}
