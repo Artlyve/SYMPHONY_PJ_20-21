@@ -9,28 +9,28 @@
             <th>Choix</th>
         </thead>
         <tbody>
-            {% for product in products %}
-                <tr>
-                    <td>{{product.libelle}}</td>
-                    <td>{{product.prix}}</td>
-                    <td>{{product.quantite}}</td>
-                    <td>
-                        <select>
-                            {% for stock in product.quantite %}
-                                {% if stock != 0 %}
-                                <option>
-                                    {{ stock }}
-                                </option>
-                                {% else %}
-                                {% endif %}
-                            {% endfor %}
-                        </select>
-                    </td>
-                    {% endfor %}
-                    <td colspan="4">
-                        <button type="submit">Commander</button>
-                    </td>
-                </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{product.libelle}}</td>
+            <td>{{product.prix}}</td>
+            <td>{{product.quantite}}</td>
+            <td>
+                {% if product.quantite == 0 %}
+                {% else %}
+                    <select>
+                        {% for i in 0..product.quantite %}
+                            <option>
+                                {{ i }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                {% endif %}
+            </td>
+            {% endfor %}
+        </tr>
         </tbody>
     </table>
+    <br> <tr colspan="4">
+        <button type="submit">Ajouter</button>
+    </tr>
 {% endblock %}
