@@ -205,7 +205,10 @@ $context["role"], "ROLE_CLIENT"))) {
         }
         // line 30
         echo "                <nav class=\"nav\">
-                    <label class=\"label\">UEL</label>
+                    <a href=\"";
+        // line 31
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("site");
+        echo "\"><label class=\"label\">UEL</label></a>
                     <ul>
                         ";
         // line 34
@@ -346,7 +349,7 @@ $context["role"], "ROLE_CLIENT"))) {
 
     public function getDebugInfo()
     {
-        return array (  325 => 80,  315 => 79,  305 => 74,  302 => 73,  296 => 72,  290 => 68,  288 => 67,  282 => 63,  279 => 62,  274 => 61,  268 => 57,  266 => 56,  263 => 55,  253 => 54,  240 => 45,  234 => 42,  228 => 39,  223 => 38,  218 => 36,  215 => 35,  212 => 34,  207 => 30,  204 => 29,  198 => 28,  191 => 25,  189 => 24,  183 => 22,  180 => 21,  175 => 20,  168 => 17,  165 => 16,  162 => 14,  152 => 13,  139 => 82,  137 => 79,  131 => 75,  129 => 54,  122 => 49,  119 => 13,  109 => 12,  97 => 8,  92 => 7,  82 => 6,  63 => 4,  40 => 2,);
+        return array (  328 => 80,  318 => 79,  308 => 74,  305 => 73,  299 => 72,  293 => 68,  291 => 67,  285 => 63,  282 => 62,  277 => 61,  271 => 57,  269 => 56,  266 => 55,  256 => 54,  243 => 45,  237 => 42,  231 => 39,  226 => 38,  221 => 36,  218 => 35,  215 => 34,  210 => 31,  207 => 30,  204 => 29,  198 => 28,  191 => 25,  189 => 24,  183 => 22,  180 => 21,  175 => 20,  168 => 17,  165 => 16,  162 => 14,  152 => 13,  139 => 82,  137 => 79,  131 => 75,  129 => 54,  122 => 49,  119 => 13,  109 => 12,  97 => 8,  92 => 7,  82 => 6,  63 => 4,  40 => 2,);
     }
 
     public function getSourceContext()
@@ -381,7 +384,7 @@ $context["role"], "ROLE_CLIENT"))) {
                 {% endfor %}
             {% endif %}
                 <nav class=\"nav\">
-                    <label class=\"label\">UEL</label>
+                    <a href=\"{{ path('site') }}\"><label class=\"label\">UEL</label></a>
                     <ul>
                         {#en fonction de si on est connecté ou non, un menu s'affiche pour l'utilisateur#}
                         {% if not app.user %}

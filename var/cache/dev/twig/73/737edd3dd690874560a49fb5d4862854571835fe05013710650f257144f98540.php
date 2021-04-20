@@ -65,7 +65,7 @@ class __TwigTemplate_5d3e52a0658ca68340b4a298a81286883132723a38d0b0cea5e9647bc23
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "vue"));
 
         // line 4
-        echo "
+        echo "    <h1>Ajouter un produit</h1>
     ";
         // line 5
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 5, $this->source); })()), 'form_start');
@@ -73,15 +73,15 @@ class __TwigTemplate_5d3e52a0658ca68340b4a298a81286883132723a38d0b0cea5e9647bc23
     ";
         // line 6
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 6, $this->source); })()), "libelle", [], "any", false, false, false, 6), 'row', ["attr" => ["placeholder" => "Nom du produit"]]);
-        echo "
+        echo "<br>
     ";
         // line 7
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), "prix", [], "any", false, false, false, 7), 'row', ["attr" => ["placeholder" => "Prix du produit"]]);
-        echo "
+        echo "<br>
     ";
         // line 8
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), "quantite", [], "any", false, false, false, 8), 'row', ["attr" => ["placeholder" => "Quantite du produit"]]);
-        echo "
+        echo "<br>
     <button type=\"submit\">
         Ajouter le produit
     </button>
@@ -121,11 +121,11 @@ class __TwigTemplate_5d3e52a0658ca68340b4a298a81286883132723a38d0b0cea5e9647bc23
         return new Source("{% extends 'base/base.html.twig' %}
 
 {% block vue %}
-
+    <h1>Ajouter un produit</h1>
     {{ form_start(form) }}
-    {{ form_row(form.libelle, {'attr': {'placeholder': \"Nom du produit\"}}) }}
-    {{ form_row(form.prix, {'attr': {'placeholder': \"Prix du produit\"}}) }}
-    {{ form_row(form.quantite, {'attr': {'placeholder': \"Quantite du produit\"}}) }}
+    {{ form_row(form.libelle, {'attr': {'placeholder': \"Nom du produit\"}}) }}<br>
+    {{ form_row(form.prix, {'attr': {'placeholder': \"Prix du produit\"}}) }}<br>
+    {{ form_row(form.quantite, {'attr': {'placeholder': \"Quantite du produit\"}}) }}<br>
     <button type=\"submit\">
         Ajouter le produit
     </button>
