@@ -44,3 +44,9 @@ b00dee,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_
 0fc665,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CSiteController%253A%253ArouteAdmin,1618927373,ca748c,200
 93ead5,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CSiteController%253A%253ArouteUtilisateur,1618927373,ca748c,200
 ca748c,::1,GET,http://localhost/projet/public/produit/listeproduits,1618927373,,200
+9fd284,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CSiteController%253A%253ArouteAdmin,1618927469,109ed5,200
+5150ee,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CSiteController%253A%253ArouteUtilisateur,1618927469,109ed5,200
+109ed5,::1,GET,http://localhost/projet/public/produit/listeproduits,1618927469,,200
+dd5f17,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CSiteController%253A%253ArouteAdmin,1618927499,6efb58,200
+e37439,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CSiteController%253A%253ArouteUtilisateur,1618927499,6efb58,200
+6efb58,::1,GET,http://localhost/projet/public/produit/listeproduits,1618927499,,200
