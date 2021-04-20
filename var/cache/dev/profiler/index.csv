@@ -307,3 +307,6 @@ f9e6be,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_
 600943,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CSiteController%253A%253ArouteAdmin,1618925822,c6acf7,200
 cc6d4a,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CSiteController%253A%253ArouteUtilisateur,1618925822,c6acf7,200
 c6acf7,::1,GET,http://localhost/projet/public/produit/listeproduits,1618925822,,200
+53fc97,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CSiteController%253A%253ArouteAdmin,1618927362,aeab74,200
+64f220,::1,GET,http://localhost/projet/public/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CSiteController%253A%253ArouteUtilisateur,1618927362,aeab74,200
+aeab74,::1,GET,http://localhost/projet/public/admin/utilisateurs,1618927362,,200
