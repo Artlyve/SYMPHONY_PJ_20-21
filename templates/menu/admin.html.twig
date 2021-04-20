@@ -1,8 +1,11 @@
 {% for roles in app.user.roles %}
     {% if roles == "ROLE_ADMIN" %}
         <li>
-            <a href="{{ path('admin_users') }}">Administration</a>
             <a href="{{ path('admin_add_product') }}">Ajouter un produit</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_users') }}">Administration</a>
+
         </li>
     {% endif %}
 {% endfor %}
