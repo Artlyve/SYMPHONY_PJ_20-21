@@ -19,7 +19,7 @@ return [
     'admin_edit_user' => [['id'], ['_controller' => 'App\\Controller\\AdminController::editUser'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/admin/utilisateur/modifier']], [], []],
     'admin_delete_user' => [['id'], ['_controller' => 'App\\Controller\\AdminController::deleteUser'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/admin/utilisateur/supprimer']], [], []],
     'admin_add_product' => [[], ['_controller' => 'App\\Controller\\AdminController::addProduct'], [], [['text', '/admin/produit/ajouter']], [], []],
-    'produit_index' => [[], ['_controller' => 'App\\Controller\\ProduitController::index'], [], [['text', '/produit/']], [], []],
+    'produit_products' => [[], ['_controller' => 'App\\Controller\\ProduitController::productList'], [], [['text', '/produit/listeproduits']], [], []],
     'security_registration' => [[], ['_controller' => 'App\\Controller\\SecurityController::registration'], [], [['text', '/security/inscription']], [], []],
     'security_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/security/connexion']], [], []],
     'security_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/security/deconnexion']], [], []],

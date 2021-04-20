@@ -1,0 +1,36 @@
+{% extends 'base/base.html.twig'%}
+
+{% block vue %}
+    <table class="table" style="border-spacing: 75px 1rem">
+        <thead>
+            <th>Libellé</th>
+            <th>Prix</th>
+            <th>Stock</th>
+            <th>Choix</th>
+        </thead>
+        <tbody>
+            {% for product in products %}
+                <tr>
+                    <td>{{product.libelle}}</td>
+                    <td>{{product.prix}}</td>
+                    <td>{{product.quantite}}</td>
+                    <td>
+                        <select>
+                            {% for stock in product.quantite %}
+                                {% if stock != 0 %}
+                                <option>
+                                    {{ stock }}
+                                </option>
+                                {% else %}
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </td>
+                    {% endfor %}
+                    <td colspan="4">
+                        <button type="submit">Commander</button>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+{% endblock %}

@@ -2,7 +2,12 @@
 
 namespace App\Controller;
 
+use App\Repository\ProduitRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -17,13 +22,23 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ProduitController extends AbstractController
 {
+    protected $em;
+
+    public function __construct(EntityManagerInterface $entityManager){
+        $this->em = $entityManager;
+    }
+
     /**
-     * @Route("/", name="index")
-     */
-    public function index(): Response
+    *  Liste des Produits du site
+    *
+    *
+    * @Route("/listeproduits", name="products")
+    * @param ProduitRepository $products
+    * @param Request $request
+    * @return Response
+    */
+    public function productList(ProduitRepository $products, Request $request): Response
     {
-        return $this->render('produit/index.html.twig', [
-            'controller_name' => 'ProduitController',
-        ]);
+        return $this->render('produit/productList.html.twig',['products'=>$products->findAll()]);
     }
 }
