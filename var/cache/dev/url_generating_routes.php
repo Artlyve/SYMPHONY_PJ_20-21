@@ -27,4 +27,5 @@ return [
     'site' => [[], ['_controller' => 'App\\Controller\\SiteController::index'], [], [['text', '/']], [], []],
     'add' => [['id'], ['_controller' => 'App\\Controller\\SiteController::add'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/ajout']], [], []],
     'del' => [['id'], ['_controller' => 'App\\Controller\\SiteController::del'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/supprimer']], [], []],
+    'user_edit' => [['id'], ['_controller' => 'App\\Controller\\UserController::editUser'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/user/utilisateur/modifier']], [], []],
 ];

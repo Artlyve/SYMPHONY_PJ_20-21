@@ -50,7 +50,7 @@ class __TwigTemplate_c0b3d9b32f67ce99ac08c74f882685d96deccc1fea10762428400de1ef4
                 echo "        <li>
             <a href=\"";
                 // line 4
-                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users");
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 4, $this->source); })()), "user", [], "any", false, false, false, 4), "id", [], "any", false, false, false, 4)]), "html", null, true);
                 echo "\">Profil</a>
         </li>
 
@@ -94,7 +94,7 @@ class __TwigTemplate_c0b3d9b32f67ce99ac08c74f882685d96deccc1fea10762428400de1ef4
         return new Source("{% for roles in app.user.roles %}
     {% if roles == \"ROLE_CLIENT\" %}
         <li>
-            <a href=\"{{ path('admin_users') }}\">Profil</a>
+            <a href=\"{{ path('user_edit', {'id':app.user.id}) }}\">Profil</a>
         </li>
 
         <li>

@@ -47,6 +47,7 @@ return [
                     .'|jout/(\\d+)(*:250)'
                 .')'
                 .'|/supprimer/(\\d+)(*:275)'
+                .'|/user/utilisateur/modifier/(\\d+)(*:315)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -60,8 +61,9 @@ return [
         208 => [[['_route' => 'admin_edit_user', '_controller' => 'App\\Controller\\AdminController::editUser'], ['id'], null, null, false, true, null]],
         231 => [[['_route' => 'admin_delete_user', '_controller' => 'App\\Controller\\AdminController::deleteUser'], ['id'], null, null, false, true, null]],
         250 => [[['_route' => 'add', '_controller' => 'App\\Controller\\SiteController::add'], ['id'], null, null, false, true, null]],
-        275 => [
-            [['_route' => 'del', '_controller' => 'App\\Controller\\SiteController::del'], ['id'], null, null, false, true, null],
+        275 => [[['_route' => 'del', '_controller' => 'App\\Controller\\SiteController::del'], ['id'], null, null, false, true, null]],
+        315 => [
+            [['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::editUser'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

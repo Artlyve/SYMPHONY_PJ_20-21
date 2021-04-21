@@ -7,7 +7,6 @@ use App\Entity\User;
 use App\Form\EditUserType;
 use App\Form\ProduitType;
 use App\Repository\UserRepository;
-use App\Repository\UsersRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -72,7 +71,7 @@ class AdminController extends AbstractController
             return $this->redirectToRoute('admin_users');
 
         }
-        return $this->render('admin/edituser.html.twig', [
+        return $this->render('user/edituser.html.twig', [
             'form' => $form->createView(),
         ]);
     }
