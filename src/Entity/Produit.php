@@ -87,17 +87,6 @@ class Produit
         return $this;
     }
 
-    public function getPanier(): ?Panier
-    {
-        return $this->panier;
-    }
-
-    public function setPanier(?Panier $panier): self
-    {
-        $this->panier = $panier;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Panier[]
@@ -110,8 +99,8 @@ class Produit
     public function addPanier(Panier $panier): self
     {
         if (!$this->paniers->contains($panier)) {
-            $this->paniers[] = $panier;
-            $panier->setProduit($this);
+            $this->paniers[] = $panier->getId();
+            $panier->setProduit($this->getId());
         }
 
         return $this;

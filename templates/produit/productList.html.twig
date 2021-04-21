@@ -21,6 +21,11 @@
                     <td>
 
                         {% if product.quantite == 0 %}
+                            <label>
+                                <select name="choix[]">
+                                    <option value="0" >0</option>
+                                </select>
+                            </label>
                         {% else %}
                             <label>
                                 <select name="choix[]">

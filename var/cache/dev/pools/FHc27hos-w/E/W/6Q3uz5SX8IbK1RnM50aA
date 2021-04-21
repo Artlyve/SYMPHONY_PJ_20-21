@@ -14,6 +14,9 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
             'inversedBy' => [
                 'paniers',
             ],
+            'name' => [
+                1 => 'Produit_Id',
+            ],
             'nullable' => [
                 1 => false,
             ],

@@ -102,17 +102,22 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
             // line 23
             if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 23), 0))) {
                 // line 24
-                echo "                        ";
+                echo "                            <label>
+                                <select name=\"choix[]\">
+                                    <option value=\"0\" >0</option>
+                                </select>
+                            </label>
+                        ";
             } else {
-                // line 25
+                // line 30
                 echo "                            <label>
                                 <select name=\"choix[]\">
                                     ";
-                // line 27
+                // line 32
                 $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable(range(0, twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 27)));
+                $context['_seq'] = twig_ensure_traversable(range(0, twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 32)));
                 foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-                    // line 28
+                    // line 33
                     echo "                                        <option value=\"";
                     echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                     echo "\" >";
@@ -123,12 +128,12 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 30
+                // line 35
                 echo "                                </select>
                             </label>
                         ";
             }
-            // line 33
+            // line 38
             echo "                    </td>
 
                     ";
@@ -136,7 +141,7 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
+        // line 41
         echo "                        <button type=\"submit\">Commander</button>
 
                 </tr>
@@ -164,7 +169,7 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
 
     public function getDebugInfo()
     {
-        return array (  140 => 36,  132 => 33,  127 => 30,  116 => 28,  112 => 27,  108 => 25,  105 => 24,  103 => 23,  95 => 18,  91 => 17,  87 => 16,  83 => 14,  79 => 13,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  145 => 41,  137 => 38,  132 => 35,  121 => 33,  117 => 32,  113 => 30,  105 => 24,  103 => 23,  95 => 18,  91 => 17,  87 => 16,  83 => 14,  79 => 13,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -192,6 +197,11 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
                     <td>
 
                         {% if product.quantite == 0 %}
+                            <label>
+                                <select name=\"choix[]\">
+                                    <option value=\"0\" >0</option>
+                                </select>
+                            </label>
                         {% else %}
                             <label>
                                 <select name=\"choix[]\">
