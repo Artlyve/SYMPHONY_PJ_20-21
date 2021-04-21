@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Panier;
+
 use App\Entity\User;
+use App\Repository\PanierRepository;
 use App\Repository\ProduitRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -43,23 +45,66 @@ class ProduitController extends AbstractController
      */
     public function productList(ProduitRepository $products, Request $request, UserInterface $user): Response
     {
-
-        $panier = new Panier();
+        $produitList = $products->findAll();
         $em = $this->em;
-        dump($request->request->get('i'));
-        dump($request);
+
+
+        if($user->getPanier() == null){
+            $panier = new Panier();
+            $panier->addUser($user);
+            $em->persist($panier);
+        }else{
+            $panier = $user->getPanier();
+        }
+
+        dump($panier);
+
+
         if($request->request->count() > 0){
 
-            $panier->setQuantite(0);
-            $panier->addProduit(0);
+            //récupération des choix effectué par l'utilisateur
+            $choix = $request->request->get('choix');
+            dump($request->request->get('choix'));
 
-            $user->setPanier($panier->getId());
 
-            $em->persist($user);
-            $em->persist($panier);
-            $em->flush();
+
+            //modifier la quantité de toute les produits en fonction de la quantité prise
+            for($i =0; $i < count($produitList); $i++ ){
+
+                if((int)$choix[$i] != 0){
+
+                    $produitList[$i]->setQuantite(( (int)$produitList[$i]->getQuantite() ) - ( (int)$choix[$i]) );
+                    $panier->setQuantite((int)$choix[$i]);
+                    $panier->addProduit($produitList[$i]);
+                    $panier->addUser($user);
+
+                    $em->flush();
+                }
+
+            }
+
+
+
             return $this->redirectToRoute('site');
         }
-        return $this->render('produit/productList.html.twig',['products'=>$products->findAll()]);
+        return $this->render('produit/productList.html.twig',['products'=>$produitList]);
+    }
+
+
+
+    /**
+     *  Affiche le panier de l'utilisateur
+     *
+     *
+     * @Route("/panier", name="panier")
+     * @param ProduitRepository $products
+     * @param Request $request
+     * @param UserInterface $user
+     * @return Response
+     */
+    public function affichePanier(UserInterface $user, PanierRepository $panier): Response
+    {
+
+        return $this->render('produit/affichePanier.html.twig',['panier'=>$user->getPanier()]);
     }
 }

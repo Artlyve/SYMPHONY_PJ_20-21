@@ -105,26 +105,27 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
                 echo "                        ";
             } else {
                 // line 25
-                echo "                            <select>
-                                ";
-                // line 26
+                echo "                            <label>
+                                <select name=\"choix[]\">
+                                    ";
+                // line 27
                 $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable(range(0, twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 26)));
+                $context['_seq'] = twig_ensure_traversable(range(0, twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 27)));
                 foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-                    // line 27
-                    echo "                                    <option>
-                                        ";
                     // line 28
+                    echo "                                        <option value=\"";
                     echo twig_escape_filter($this->env, $context["i"], "html", null, true);
-                    echo "
-                                    </option>
-                                ";
+                    echo "\" >";
+                    echo twig_escape_filter($this->env, $context["i"], "html", null, true);
+                    echo "</option>
+                                    ";
                 }
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 31
-                echo "                            </select>
+                // line 30
+                echo "                                </select>
+                            </label>
                         ";
             }
             // line 33
@@ -163,7 +164,7 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
 
     public function getDebugInfo()
     {
-        return array (  139 => 36,  131 => 33,  127 => 31,  118 => 28,  115 => 27,  111 => 26,  108 => 25,  105 => 24,  103 => 23,  95 => 18,  91 => 17,  87 => 16,  83 => 14,  79 => 13,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  140 => 36,  132 => 33,  127 => 30,  116 => 28,  112 => 27,  108 => 25,  105 => 24,  103 => 23,  95 => 18,  91 => 17,  87 => 16,  83 => 14,  79 => 13,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -192,13 +193,13 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
 
                         {% if product.quantite == 0 %}
                         {% else %}
-                            <select>
-                                {% for i in 0..product.quantite %}
-                                    <option>
-                                        {{ i }}
-                                    </option>
-                                {% endfor %}
-                            </select>
+                            <label>
+                                <select name=\"choix[]\">
+                                    {% for i in 0..product.quantite %}
+                                        <option value=\"{{ i }}\" >{{ i }}</option>
+                                    {% endfor %}
+                                </select>
+                            </label>
                         {% endif %}
                     </td>
 

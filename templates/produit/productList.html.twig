@@ -22,13 +22,13 @@
 
                         {% if product.quantite == 0 %}
                         {% else %}
-                            <select>
-                                {% for i in 0..product.quantite %}
-                                    <option>
-                                        {{ i }}
-                                    </option>
-                                {% endfor %}
-                            </select>
+                            <label>
+                                <select name="choix[]">
+                                    {% for i in 0..product.quantite %}
+                                        <option value="{{ i }}" >{{ i }}</option>
+                                    {% endfor %}
+                                </select>
+                            </label>
                         {% endif %}
                     </td>
 
