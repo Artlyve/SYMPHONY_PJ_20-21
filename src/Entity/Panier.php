@@ -3,12 +3,9 @@
 namespace App\Entity;
 
 use App\Repository\PanierRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Table(name="im2021_panier")
  * @ORM\Entity(repositoryClass=PanierRepository::class)
  */
 class Panier
@@ -21,99 +18,59 @@ class Panier
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity=User::class, mappedBy="panier")
+     * @ORM\ManyToOne(targetEntity=Produit::class, inversedBy="paniers")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $user;
+    private $Produit;
 
     /**
-     * @ORM\OneToMany(targetEntity=Produit::class, mappedBy="panier")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="paniers")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $produit;
+    private $User;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $quantite;
-
-    public function __construct()
-    {
-        $this->user = new ArrayCollection();
-        $this->produit = new ArrayCollection();
-    }
+    private $Quantite;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @return Collection|User[]
-     */
-    public function getUser(): Collection
+    public function getProduit(): ?Produit
     {
-        return $this->user;
+        return $this->Produit;
     }
 
-    public function addUser(User $user): self
+    public function setProduit(?Produit $Produit): self
     {
-        if (!$this->user->contains($user)) {
-            $this->user[] = $user;
-            $user->setPanier($this);
-        }
+        $this->Produit = $Produit;
 
         return $this;
     }
 
-    public function removeUser(User $user): self
+    public function getUser(): ?User
     {
-        if ($this->user->removeElement($user)) {
-            // set the owning side to null (unless already changed)
-            if ($user->getPanier() === $this) {
-                $user->setPanier(null);
-            }
-        }
-
-        return $this;
+        return $this->User;
     }
 
-    /**
-     * @return Collection|Produit[]
-     */
-    public function getProduit(): Collection
+    public function setUser(?User $User): self
     {
-        return $this->produit;
-    }
-
-    public function addProduit(Produit $produit): self
-    {
-        if (!$this->produit->contains($produit)) {
-            $this->produit[] = $produit;
-            $produit->setPanier($this);
-        }
-
-        return $this;
-    }
-
-    public function removeProduit(Produit $produit): self
-    {
-        if ($this->produit->removeElement($produit)) {
-            // set the owning side to null (unless already changed)
-            if ($produit->getPanier() === $this) {
-                $produit->setPanier(null);
-            }
-        }
+        $this->User = $User;
 
         return $this;
     }
 
     public function getQuantite(): ?int
     {
-        return $this->quantite;
+        return $this->Quantite;
     }
 
-    public function setQuantite(int $quantite): self
+    public function setQuantite(int $Quantite): self
     {
-        $this->quantite = $quantite;
+        $this->Quantite = $Quantite;
 
         return $this;
     }

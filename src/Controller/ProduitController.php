@@ -41,9 +41,10 @@ class ProduitController extends AbstractController
      * @param ProduitRepository $products
      * @param Request $request
      * @param UserInterface $user
+     * @param PanierRepository $test
      * @return Response
      */
-    public function productList(ProduitRepository $products, Request $request, UserInterface $user): Response
+    public function productList(ProduitRepository $products, Request $request, UserInterface $user, PanierRepository $test): Response
     {
         $produitList = $products->findAll();
         $em = $this->em;
@@ -57,7 +58,8 @@ class ProduitController extends AbstractController
             $panier = $user->getPanier();
         }
 
-        dump($panier);
+        dump($user->getPanier());
+        dump($test->findAll()[0]);
 
 
         if($request->request->count() > 0){
