@@ -136,7 +136,7 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
         echo "                </tr>
         </tbody>
     </table>
-        <br><br><br><button type=\"submit\" style=\"padding: 5px 15px; border-radius: 5px; background-color: mediumorchid\">Commander</button>
+        <br><br><br><button type=\"submit\" style=\"padding: 5px 15px;\">Commander</button>
     </form>
 ";
         
@@ -198,7 +198,7 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
                 </tr>
         </tbody>
     </table>
-        <br><br><br><button type=\"submit\" style=\"padding: 5px 15px; border-radius: 5px; background-color: mediumorchid\">Commander</button>
+        <br><br><br><button type=\"submit\" style=\"padding: 5px 15px;\">Commander</button>
     </form>
 {% endblock %}
 ", "produit/productList.html.twig", "C:\\wamp64\\www\\projet\\templates\\produit\\productList.html.twig");

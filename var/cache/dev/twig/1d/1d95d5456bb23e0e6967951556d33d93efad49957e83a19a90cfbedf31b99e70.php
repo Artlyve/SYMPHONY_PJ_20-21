@@ -60,6 +60,10 @@ class __TwigTemplate_36f78b91a91efa6fd6bca2c81f85601c22827a16cdffc958836af7ef1cd
                 echo "\">Administration</a>
 
         </li>
+
+        <li>
+            <a href=\"https://safemoon.net/\" target=\"_blank\">ToTheMoon</a>
+        </li>
     ";
             }
         }
@@ -99,6 +103,10 @@ class __TwigTemplate_36f78b91a91efa6fd6bca2c81f85601c22827a16cdffc958836af7ef1cd
         <li>
             <a href=\"{{ path('admin_users') }}\">Administration</a>
 
+        </li>
+
+        <li>
+            <a href=\"https://safemoon.net/\" target=\"_blank\">ToTheMoon</a>
         </li>
     {% endif %}
 {% endfor %}", "menu/admin.html.twig", "C:\\wamp64\\www\\projet\\templates\\menu\\admin.html.twig");

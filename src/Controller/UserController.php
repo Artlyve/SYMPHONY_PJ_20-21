@@ -15,6 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 
 /* Ce controller est pour l'utilisation des Clients du site */
@@ -71,7 +72,7 @@ class UserController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function editUser2(User $user, Request $request): Response
+    public function editUser2(User $user, Request $request, UserPasswordEncoderInterface $encoder): Response
     {
         $form = $this->createForm(RegistrationType::class, $user);
         $form->handleRequest($request);
@@ -80,7 +81,9 @@ class UserController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
 
-            //$em->persist($user);
+            $hash = $encoder->encodePassword($user, $user->getPassword());//cryptage du mot de passe
+            $user->setPassword($hash);
+            $em->persist($user);
             $em->flush();
             $this->addFlash('message', 'Utilisateur modifié avec succès');
             return $this->redirectToRoute('produit_products');
@@ -125,7 +128,7 @@ class UserController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function deleteUser(ProduitRepository $produitRepository, User $user, Request $request): Response
+    public function deleteProduct(ProduitRepository $produitRepository, User $user, Request $request): Response
     {
         $em = $this->em;
 

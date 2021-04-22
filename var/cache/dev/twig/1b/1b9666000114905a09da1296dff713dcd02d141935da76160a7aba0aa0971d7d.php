@@ -264,7 +264,7 @@ $context["role"], "ROLE_CLIENT"))) {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "vue"));
 
         // line 56
-        echo "                    <h1>Bienvenue sur notre site de vente de pierre précieuse !</h1>
+        echo "                    <h1>Bienvenue sur notre site de vente de pierre précieuses !</h1>
                     ";
         // line 57
         if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 57, $this->source); })()), "user", [], "any", false, false, false, 57)) {
@@ -410,7 +410,7 @@ $context["role"], "ROLE_CLIENT"))) {
         <div class=\"vue\">
 
                 {% block vue %}
-                    <h1>Bienvenue sur notre site de vente de pierre précieuse !</h1>
+                    <h1>Bienvenue sur notre site de vente de pierre précieuses !</h1>
                     {% if not app.user %}
                         <br>
                         <span>SESSION ANONYME</span>

@@ -84,7 +84,7 @@ class ProduitController extends AbstractController
 
             }
 
-            return $this->redirectToRoute('site');
+            return $this->redirectToRoute('user_panier', ['id' => $currentUser->getId()]);
         }
         return $this->render('produit/productList.html.twig',['products'=>$produitList]);
     }

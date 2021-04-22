@@ -65,7 +65,7 @@ class __TwigTemplate_60b8d0d4e0ea45cb1ff8d83af38b5aae35d4c2898108f6b1747d0183db9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "vue"));
 
         // line 4
-        echo "    <h1>Modifier l'utilisateur</h1>
+        echo "    <h1>Profil</h1>
     ";
         // line 5
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 5, $this->source); })()), 'form_start');
@@ -109,7 +109,7 @@ class __TwigTemplate_60b8d0d4e0ea45cb1ff8d83af38b5aae35d4c2898108f6b1747d0183db9
         return new Source("{% extends 'base/base.html.twig' %}
 
 {% block vue %}
-    <h1>Modifier l'utilisateur</h1>
+    <h1>Profil</h1>
     {{ form_start(form) }}
     {{ form_widget(form) }}<br>
     <button type=\"submit\">Enregistrer la modification</button>

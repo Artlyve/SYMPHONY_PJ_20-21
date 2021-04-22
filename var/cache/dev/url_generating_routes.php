@@ -29,5 +29,5 @@ return [
     'user_edit' => [['id'], ['_controller' => 'App\\Controller\\UserController::editUser'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/user/utilisateur/modifier']], [], []],
     'user_edit2' => [['id'], ['_controller' => 'App\\Controller\\UserController::editUser2'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/user/utilisateur2/modifier']], [], []],
     'user_panier' => [['id'], ['_controller' => 'App\\Controller\\UserController::panierUser'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/user/utilisateur/panier']], [], []],
-    'user_delete_product' => [['id'], ['_controller' => 'App\\Controller\\UserController::deleteUser'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/user/user/supprimer']], [], []],
+    'user_delete_product' => [['id'], ['_controller' => 'App\\Controller\\UserController::deleteProduct'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/user/user/supprimer']], [], []],
 ];

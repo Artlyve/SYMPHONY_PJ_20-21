@@ -2,24 +2,46 @@
 
 {% block vue %}
 
-
+<h1>Votre Panier</h1>
     <table class="table" style="border-spacing: 75px 1rem">
         <thead>
             <th>Libelle</th>
-            <th>prix</th>
+            <th>prix unitaire</th>
             <th>Quantite</th>
+            <th>prix total</th>
             <th>Action</th>
         </thead>
         <tbody>
             {% for panier in paniers %}
                  <tr>
                      <td>{{ panier.produit.libelle }}</td>
-                     <td>{{ panier.produit.prix * panier.quantite }}</td>
+                     <td>{{ panier.produit.prix }} €</td>
                      <td>{{ panier.quantite }}</td>
+                     <td>{{ panier.produit.prix * panier.quantite }} €</td>
                      <td><a href="{{ path('user_delete_product', {'id' : app.user.id})  }} ">Supprimer</a></td>
             {% endfor %}
 
+
                  </tr>
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td>
+                        {% set quantiteTT = 0 %}
+                            {% for panier in paniers %}
+                            {% set quantiteTT = quantiteTT + panier.quantite %}
+                        {% endfor %}
+                        {{ quantiteTT }}
+                    </td>
+
+                    <td>
+                        {% set prixTT = 0 %}
+                        {% for panier in paniers %}
+                            {% set quantiteTT = quantiteTT + (panier.produit.prix * panier.quantite) %}
+                        {% endfor %}
+                        {{ quantiteTT }} €
+                    </td>
+                </tr>
         </tbody>
     </table>
 {% endblock %}

@@ -74,7 +74,7 @@ return [
         344 => [[['_route' => 'user_panier', '_controller' => 'App\\Controller\\UserController::panierUser'], ['id'], null, null, false, true, null]],
         369 => [[['_route' => 'user_edit2', '_controller' => 'App\\Controller\\UserController::editUser2'], ['id'], null, null, false, true, null]],
         397 => [
-            [['_route' => 'user_delete_product', '_controller' => 'App\\Controller\\UserController::deleteUser'], ['id'], null, null, false, true, null],
+            [['_route' => 'user_delete_product', '_controller' => 'App\\Controller\\UserController::deleteProduct'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
