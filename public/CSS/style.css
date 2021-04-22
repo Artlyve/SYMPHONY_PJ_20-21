@@ -14,14 +14,6 @@ body{
     color: white;
 }
 
-label.label{
-    color: white;
-    font-size: 35px;
-    line-height: 80px;
-    padding: 0 100px;
-    font-weight: bold;
-}
-
 .nav{
     background: #375a7f;
     height: 80px;

@@ -207,9 +207,9 @@ $context["role"], "ROLE_CLIENT"))) {
         echo "                <nav class=\"nav\">
                     ";
         // line 32
-        echo "                    <a href=\"";
+        echo "                    <a style=\"font-size: 35px;line-height: 80px;padding: 0 100px;font-weight: bold;\" href=\"";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("site");
-        echo "\"><label class=\"label\">UEL</label></a>
+        echo "\" >UEL</a>
                     <ul>
                         ";
         // line 35
@@ -386,7 +386,7 @@ $context["role"], "ROLE_CLIENT"))) {
             {% endif %}
                 <nav class=\"nav\">
                     {#Renvoie l'utilisateur à la page d'accueil#}
-                    <a href=\"{{ path('site') }}\"><label class=\"label\">UEL</label></a>
+                    <a style=\"font-size: 35px;line-height: 80px;padding: 0 100px;font-weight: bold;\" href=\"{{ path('site') }}\" >UEL</a>
                     <ul>
                         {#en fonction de si on est connecté ou non, un menu s'affiche pour l'utilisateur#}
                         {% if not app.user %}

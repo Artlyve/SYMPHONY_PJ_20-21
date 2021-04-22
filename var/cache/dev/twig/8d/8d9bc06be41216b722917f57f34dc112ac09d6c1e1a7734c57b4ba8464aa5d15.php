@@ -89,7 +89,7 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
                     <td>";
             // line 17
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "prix", [], "any", false, false, false, 17), "html", null, true);
-            echo "</td>
+            echo " €</td>
                     <td>";
             // line 18
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 18), "html", null, true);
@@ -180,7 +180,7 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
 
                 <tr>
                     <td>{{product.libelle}}</td>
-                    <td>{{product.prix}}</td>
+                    <td>{{product.prix}} €</td>
                     <td>{{product.quantite}}</td>
                     <td>
                         {% if product.quantite == 0 %}

@@ -8,6 +8,7 @@ use App\Form\EditUserType;
 use App\Form\RegistrationType;
 use App\Repository\ProduitRepository;
 use App\Repository\UserRepository;
+use App\Service\total;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -104,17 +105,19 @@ class UserController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function panierUser( User $user, Request $request): Response
+    public function panierUser( User $user, total $total): Response
     {
 
-        $em = $this->em;
 
+        $em = $this->em;
+        $reponse = $total->getTotal($user);
         $paniers = $user->getPaniers();
 
 
 
         return $this->render('user/panier.html.twig', [
             'paniers' => $paniers,
+            'reponse' => $reponse
         ]);
     }
 

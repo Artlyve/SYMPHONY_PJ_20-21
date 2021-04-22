@@ -27,19 +27,11 @@
                     <td>Total</td>
                     <td></td>
                     <td>
-                        {% set quantiteTT = 0 %}
-                            {% for panier in paniers %}
-                            {% set quantiteTT = quantiteTT + panier.quantite %}
-                        {% endfor %}
-                        {{ quantiteTT }}
+                        {{ reponse[0] }} €
                     </td>
 
                     <td>
-                        {% set prixTT = 0 %}
-                        {% for panier in paniers %}
-                            {% set quantiteTT = quantiteTT + (panier.produit.prix * panier.quantite) %}
-                        {% endfor %}
-                        {{ quantiteTT }} €
+                        {{ reponse[1] }} €
                     </td>
                 </tr>
         </tbody>

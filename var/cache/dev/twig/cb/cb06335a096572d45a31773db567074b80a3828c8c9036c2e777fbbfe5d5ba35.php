@@ -116,51 +116,19 @@ class __TwigTemplate_63cb21d7fda85783d0236e2656ec6ee187d1b942787fcb26269ec356bac
                     <td>Total</td>
                     <td></td>
                     <td>
+
                         ";
-        // line 30
-        $context["quantiteTT"] = 0;
         // line 31
-        echo "                            ";
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["paniers"]) || array_key_exists("paniers", $context) ? $context["paniers"] : (function () { throw new RuntimeError('Variable "paniers" does not exist.', 31, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["panier"]) {
-            // line 32
-            echo "                            ";
-            $context["quantiteTT"] = ((isset($context["quantiteTT"]) || array_key_exists("quantiteTT", $context) ? $context["quantiteTT"] : (function () { throw new RuntimeError('Variable "quantiteTT" does not exist.', 32, $this->source); })()) + twig_get_attribute($this->env, $this->source, $context["panier"], "quantite", [], "any", false, false, false, 32));
-            // line 33
-            echo "                        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['panier'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
-        echo "                        ";
-        echo twig_escape_filter($this->env, (isset($context["quantiteTT"]) || array_key_exists("quantiteTT", $context) ? $context["quantiteTT"] : (function () { throw new RuntimeError('Variable "quantiteTT" does not exist.', 34, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reponse"]) || array_key_exists("reponse", $context) ? $context["reponse"] : (function () { throw new RuntimeError('Variable "reponse" does not exist.', 31, $this->source); })()), 0, [], "array", false, false, false, 31), "html", null, true);
         echo "
                     </td>
 
                     <td>
+
                         ";
-        // line 38
-        $context["prixTT"] = 0;
-        // line 39
-        echo "                        ";
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["paniers"]) || array_key_exists("paniers", $context) ? $context["paniers"] : (function () { throw new RuntimeError('Variable "paniers" does not exist.', 39, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["panier"]) {
-            // line 40
-            echo "                            ";
-            $context["quantiteTT"] = ((isset($context["quantiteTT"]) || array_key_exists("quantiteTT", $context) ? $context["quantiteTT"] : (function () { throw new RuntimeError('Variable "quantiteTT" does not exist.', 40, $this->source); })()) + (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["panier"], "produit", [], "any", false, false, false, 40), "prix", [], "any", false, false, false, 40) * twig_get_attribute($this->env, $this->source, $context["panier"], "quantite", [], "any", false, false, false, 40)));
-            // line 41
-            echo "                        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['panier'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 42
-        echo "                        ";
-        echo twig_escape_filter($this->env, (isset($context["quantiteTT"]) || array_key_exists("quantiteTT", $context) ? $context["quantiteTT"] : (function () { throw new RuntimeError('Variable "quantiteTT" does not exist.', 42, $this->source); })()), "html", null, true);
-        echo " €
+        // line 36
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reponse"]) || array_key_exists("reponse", $context) ? $context["reponse"] : (function () { throw new RuntimeError('Variable "reponse" does not exist.', 36, $this->source); })()), 1, [], "array", false, false, false, 36), "html", null, true);
+        echo "
                     </td>
                 </tr>
         </tbody>
@@ -186,7 +154,7 @@ class __TwigTemplate_63cb21d7fda85783d0236e2656ec6ee187d1b942787fcb26269ec356bac
 
     public function getDebugInfo()
     {
-        return array (  161 => 42,  155 => 41,  152 => 40,  147 => 39,  145 => 38,  137 => 34,  131 => 33,  128 => 32,  123 => 31,  121 => 30,  112 => 23,  104 => 21,  100 => 20,  96 => 19,  92 => 18,  88 => 17,  85 => 16,  81 => 15,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  130 => 36,  122 => 31,  112 => 23,  104 => 21,  100 => 20,  96 => 19,  92 => 18,  88 => 17,  85 => 16,  81 => 15,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -220,19 +188,13 @@ class __TwigTemplate_63cb21d7fda85783d0236e2656ec6ee187d1b942787fcb26269ec356bac
                     <td>Total</td>
                     <td></td>
                     <td>
-                        {% set quantiteTT = 0 %}
-                            {% for panier in paniers %}
-                            {% set quantiteTT = quantiteTT + panier.quantite %}
-                        {% endfor %}
-                        {{ quantiteTT }}
+
+                        {{ reponse[0] }}
                     </td>
 
                     <td>
-                        {% set prixTT = 0 %}
-                        {% for panier in paniers %}
-                            {% set quantiteTT = quantiteTT + (panier.produit.prix * panier.quantite) %}
-                        {% endfor %}
-                        {{ quantiteTT }} €
+
+                        {{ reponse[1] }}
                     </td>
                 </tr>
         </tbody>
