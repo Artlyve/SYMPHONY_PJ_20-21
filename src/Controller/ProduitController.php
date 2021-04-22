@@ -54,7 +54,7 @@ class ProduitController extends AbstractController
         dump($user->findOneBySomeField($this->getUser()->getUsername()));
         $currentUser = $user->findOneBySomeField($this->getUser()->getUsername()); //récupération de l'utilisateur connecté
 
-        dump($currentUser->getPaniers());
+        dump($currentUser->getPaniers()[0]);
 
        if($request->request->count() > 0){
 

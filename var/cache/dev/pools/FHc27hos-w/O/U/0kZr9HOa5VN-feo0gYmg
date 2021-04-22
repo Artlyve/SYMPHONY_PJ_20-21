@@ -2,39 +2,37 @@
 
 return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
     $o = [
-        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Id'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Id')),
-        clone ($p['Doctrine\\ORM\\Mapping\\ManyToOne'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ManyToOne')),
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ManyToOne'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ManyToOne')),
         clone ($p['Doctrine\\ORM\\Mapping\\JoinColumn'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\JoinColumn')),
     ],
     null,
     [
         'stdClass' => [
             'targetEntity' => [
-                1 => 'App\\Entity\\User',
+                'App\\Entity\\User',
             ],
             'cascade' => [
-                1 => [
+                [
                     'persist',
                 ],
             ],
             'inversedBy' => [
-                1 => 'paniers',
+                'paniers',
             ],
             'name' => [
-                2 => 'User_id',
+                1 => 'User_id',
             ],
             'referencedColumnName' => [
-                2 => 'pk',
+                1 => 'pk',
             ],
             'nullable' => [
-                2 => false,
+                1 => false,
             ],
         ],
     ],
     [
         $o[0],
         $o[1],
-        $o[2],
     ],
     []
 ); }];

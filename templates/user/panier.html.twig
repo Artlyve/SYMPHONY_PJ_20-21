@@ -1,0 +1,25 @@
+{% extends 'base/base.html.twig' %}
+
+{% block vue %}
+
+
+    <table class="table" style="border-spacing: 75px 1rem">
+        <thead>
+            <th>Libelle</th>
+            <th>prix</th>
+            <th>Quantite</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            {% for panier in paniers %}
+                 <tr>
+                     <td>{{ panier.produit.libelle }}</td>
+                     <td>{{ panier.produit.prix * panier.quantite }}</td>
+                     <td>{{ panier.quantite }}</td>
+                     <td><a href="{{ path('user_delete_product', {'id' : app.user.id})  }} ">Supprimer</a></td>
+            {% endfor %}
+
+                 </tr>
+        </tbody>
+    </table>
+{% endblock %}

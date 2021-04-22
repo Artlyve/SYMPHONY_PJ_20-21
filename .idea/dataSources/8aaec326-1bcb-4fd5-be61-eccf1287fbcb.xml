@@ -370,9 +370,9 @@
     <package id="168" parent="1" name="rtree"/>
     <package id="169" parent="1" name="rtree_i32"/>
     <table id="170" parent="2" name="doctrine_migration_versions"/>
-    <table id="171" parent="2" name="im2021_produit"/>
-    <table id="172" parent="2" name="im2021_user"/>
-    <table id="173" parent="2" name="panier"/>
+    <table id="171" parent="2" name="im2021_panier"/>
+    <table id="172" parent="2" name="im2021_produit"/>
+    <table id="173" parent="2" name="im2021_user"/>
     <table id="174" parent="2" name="sqlite_master">
       <System>1</System>
     </table>
@@ -1362,111 +1362,111 @@
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_doctrine_migration_versions_1</UnderlyingIndexName>
     </key>
-    <column id="500" parent="171" name="id">
+    <column id="500" parent="171" name="quantite">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="501" parent="171" name="User_id">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="502" parent="171" name="Produit_Id">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="503" parent="171" name="IDX_2129058FD5ED5989">
+      <ColNames>Produit_Id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="504" parent="171">
+      <ColNames>User_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="505" parent="171" name="FK_2129058F68D3EA09">
+      <ColNames>User_id</ColNames>
+      <RefTableName>im2021_user</RefTableName>
+      <RefColNames>pk</RefColNames>
+    </foreign-key>
+    <foreign-key id="506" parent="171" name="FK_2129058FD5ED5989">
+      <ColNames>Produit_Id</ColNames>
+      <RefTableName>im2021_produit</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="507" parent="172" name="id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="501" parent="171" name="libelle">
+    <column id="508" parent="172" name="libelle">
       <Position>2</Position>
       <DataType>VARCHAR(50)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="502" parent="171" name="prix">
+    <column id="509" parent="172" name="prix">
       <Position>3</Position>
       <DataType>DOUBLE PRECISION|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="503" parent="171" name="quantite">
+    <column id="510" parent="172" name="quantite">
       <Position>4</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="504" parent="171">
+    <key id="511" parent="172">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="505" parent="172" name="pk">
+    <column id="512" parent="173" name="pk">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="506" parent="172" name="nom">
+    <column id="513" parent="173" name="nom">
       <Position>2</Position>
       <DataType>VARCHAR(30)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
     </column>
-    <column id="507" parent="172" name="prenom">
+    <column id="514" parent="173" name="prenom">
       <Position>3</Position>
       <DataType>VARCHAR(30)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
     </column>
-    <column id="508" parent="172" name="username">
+    <column id="515" parent="173" name="username">
       <Position>4</Position>
       <DataType>VARCHAR(64)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="509" parent="172" name="roles">
+    <column id="516" parent="173" name="roles">
       <Position>5</Position>
       <DataType>CLOB|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="510" parent="172" name="password">
+    <column id="517" parent="173" name="password">
       <Position>6</Position>
       <DataType>VARCHAR(64)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="511" parent="172" name="birthday">
+    <column id="518" parent="173" name="birthday">
       <Position>7</Position>
       <DataType>DATE|0s</DataType>
       <DefaultExpression>NULL</DefaultExpression>
     </column>
-    <index id="512" parent="172" name="UNIQ_7431C84F85E0677">
+    <index id="519" parent="173" name="UNIQ_7431C84F85E0677">
       <ColNames>username</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="513" parent="172">
+    <key id="520" parent="173">
       <ColNames>pk</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="514" parent="173" name="produit_id">
-      <Position>1</Position>
-      <DataType>INTEGER|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="515" parent="173" name="user_id">
-      <Position>2</Position>
-      <DataType>INTEGER|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="516" parent="173" name="quantite">
-      <Position>3</Position>
-      <DataType>INTEGER|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="517" parent="173" name="IDX_24CC0DF2D5ED5989">
-      <ColNames>produit_id</ColNames>
-      <ColumnCollations></ColumnCollations>
-    </index>
-    <key id="518" parent="173">
-      <ColNames>user_id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="519" parent="173" name="FK_24CC0DF2D5ED5989">
-      <ColNames>produit_id</ColNames>
-      <RefTableName>im2021_produit</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="520" parent="173" name="FK_24CC0DF268D3EA09">
-      <ColNames>user_id</ColNames>
-      <RefTableName>im2021_user</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
     <column id="521" parent="174" name="type">
       <Position>1</Position>
       <DataType>text|0s</DataType>

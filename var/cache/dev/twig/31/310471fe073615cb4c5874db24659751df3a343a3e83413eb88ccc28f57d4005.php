@@ -60,6 +60,13 @@ class __TwigTemplate_c0b3d9b32f67ce99ac08c74f882685d96deccc1fea10762428400de1ef4
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_products");
                 echo "\">Listes des produits</a>
         </li>
+
+        <li>
+            <a href=\"";
+                // line 12
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_panier", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12), "id", [], "any", false, false, false, 12)]), "html", null, true);
+                echo "\">Panier</a>
+        </li>
     ";
             }
         }
@@ -86,7 +93,7 @@ class __TwigTemplate_c0b3d9b32f67ce99ac08c74f882685d96deccc1fea10762428400de1ef4
 
     public function getDebugInfo()
     {
-        return array (  60 => 8,  53 => 4,  50 => 3,  47 => 2,  43 => 1,);
+        return array (  67 => 12,  60 => 8,  53 => 4,  50 => 3,  47 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -99,6 +106,10 @@ class __TwigTemplate_c0b3d9b32f67ce99ac08c74f882685d96deccc1fea10762428400de1ef4
 
         <li>
             <a href=\"{{ path('produit_products') }}\">Listes des produits</a>
+        </li>
+
+        <li>
+            <a href=\"{{ path('user_panier', {'id' : app.user.id}) }}\">Panier</a>
         </li>
     {% endif %}
 {% endfor %}", "menu/users.html.twig", "C:\\wamp64\\www\\projet\\templates\\menu\\users.html.twig");

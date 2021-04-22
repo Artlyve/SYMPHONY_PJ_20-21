@@ -11,15 +11,15 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Panier
 {
-  /*  /**
-     *
+    /**
+     * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    //private $id;
+    protected $id;
 
     /**
-     * @ORM\Id
+
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="paniers", cascade={"persist"})
      * @ORM\JoinColumn(name="User_id", referencedColumnName="pk", nullable=false)
      */
@@ -38,7 +38,10 @@ class Panier
      */
     private $Quantite;
 
-
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
     public function getProduit(): ?Produit
     {

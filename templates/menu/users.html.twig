@@ -7,5 +7,9 @@
         <li>
             <a href="{{ path('produit_products') }}">Listes des produits</a>
         </li>
+
+        <li>
+            <a href="{{ path('user_panier', {'id' : app.user.id}) }}">Panier</a>
+        </li>
     {% endif %}
 {% endfor %}
