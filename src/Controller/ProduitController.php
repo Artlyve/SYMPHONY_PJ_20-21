@@ -7,6 +7,7 @@ use App\Entity\Panier;
 use App\Entity\User;
 use App\Repository\PanierRepository;
 use App\Repository\ProduitRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -40,29 +41,22 @@ class ProduitController extends AbstractController
      * @Route("/listeproduits", name="products")
      * @param ProduitRepository $products
      * @param Request $request
-     * @param UserInterface $user
-     * @param PanierRepository $test
+     * @param UserRepository $user
      * @return Response
+     * @throws \Doctrine\ORM\NonUniqueResultException
      */
-    public function productList(ProduitRepository $products, Request $request, UserInterface $user, PanierRepository $test): Response
+    public function productList(ProduitRepository $products, Request $request, UserRepository $user): Response
     {
         $produitList = $products->findAll();
         $em = $this->em;
 
+        dump($this->getUser()->getUsername());
+        dump($user->findOneBySomeField($this->getUser()->getUsername()));
+        $currentUser = $user->findOneBySomeField($this->getUser()->getUsername()); //récupération de l'utilisateur connecté
 
-        if($user->getPanier() == null){
-            $panier = new Panier();
-            $panier->addUser($user);
-            $em->persist($panier);
-        }else{
-            $panier = $user->getPanier();
-        }
+        dump($currentUser->getPaniers());
 
-        dump($user->getPanier());
-        dump($test->findAll()[0]);
-
-
-        if($request->request->count() > 0){
+       if($request->request->count() > 0){
 
             //récupération des choix effectué par l'utilisateur
             $choix = $request->request->get('choix');
@@ -73,19 +67,22 @@ class ProduitController extends AbstractController
             //modifier la quantité de toute les produits en fonction de la quantité prise
             for($i =0; $i < count($produitList); $i++ ){
 
+
                 if((int)$choix[$i] != 0){
+
+                    $panier = new Panier();
+                    $currentUser->addPanier($panier);
 
                     $produitList[$i]->setQuantite(( (int)$produitList[$i]->getQuantite() ) - ( (int)$choix[$i]) );
                     $panier->setQuantite((int)$choix[$i]);
-                    $panier->addProduit($produitList[$i]);
-                    $panier->addUser($user);
 
+                    $produitList[$i]->addPanier($panier);
+                    $em->persist($panier);
                     $em->flush();
                 }
 
+
             }
-
-
 
             return $this->redirectToRoute('site');
         }
@@ -93,20 +90,4 @@ class ProduitController extends AbstractController
     }
 
 
-
-    /**
-     *  Affiche le panier de l'utilisateur
-     *
-     *
-     * @Route("/panier", name="panier")
-     * @param ProduitRepository $products
-     * @param Request $request
-     * @param UserInterface $user
-     * @return Response
-     */
-    public function affichePanier(UserInterface $user, PanierRepository $panier): Response
-    {
-
-        return $this->render('produit/affichePanier.html.twig',['panier'=>$user->getPanier()]);
-    }
 }

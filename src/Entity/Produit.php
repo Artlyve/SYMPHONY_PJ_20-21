@@ -15,10 +15,10 @@ class Produit
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      * @ORM\Column(type="integer")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=50)
@@ -36,7 +36,7 @@ class Produit
     private $quantite;
 
     /**
-     * @ORM\OneToMany(targetEntity=Panier::class, mappedBy="Produit")
+     * @ORM\OneToMany(targetEntity=Panier::class, mappedBy="Produit", cascade={"persist"})
      */
     private $paniers;
 
@@ -87,17 +87,6 @@ class Produit
         return $this;
     }
 
-    public function getPanier(): ?Panier
-    {
-        return $this->panier;
-    }
-
-    public function setPanier(?Panier $panier): self
-    {
-        $this->panier = $panier;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Panier[]

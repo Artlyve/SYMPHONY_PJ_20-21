@@ -17,10 +17,10 @@ class User implements UserInterface
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      * @ORM\Column(type="integer", name="pk")
      */
-    private $id;
+    protected $id;
 
 
     /**
@@ -57,7 +57,7 @@ class User implements UserInterface
     private $birthday;
 
     /**
-     * @ORM\OneToMany(targetEntity=Panier::class, mappedBy="User")
+     * @ORM\OneToMany(targetEntity=Panier::class, mappedBy="User", cascade={"persist"})
      */
     private $paniers;
 
@@ -193,17 +193,6 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getPanier(): ?Panier
-    {
-        return $this->panier;
-    }
-
-    public function setPanier(?Panier $panier): self
-    {
-        $this->panier = $panier;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Panier[]
