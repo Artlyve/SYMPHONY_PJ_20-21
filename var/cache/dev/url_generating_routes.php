@@ -27,6 +27,7 @@ return [
     'add' => [['id'], ['_controller' => 'App\\Controller\\SiteController::add'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/ajout']], [], []],
     'del' => [['id'], ['_controller' => 'App\\Controller\\SiteController::del'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/supprimer']], [], []],
     'user_edit' => [['id'], ['_controller' => 'App\\Controller\\UserController::editUser'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/user/utilisateur/modifier']], [], []],
+    'user_edit2' => [['id'], ['_controller' => 'App\\Controller\\UserController::editUser2'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/user/utilisateur2/modifier']], [], []],
     'user_panier' => [['id'], ['_controller' => 'App\\Controller\\UserController::panierUser'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/user/utilisateur/panier']], [], []],
     'user_delete_product' => [['id'], ['_controller' => 'App\\Controller\\UserController::deleteUser'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/user/user/supprimer']], [], []],
 ];

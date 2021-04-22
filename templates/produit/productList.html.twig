@@ -16,10 +16,7 @@
                     <td>{{product.libelle}}</td>
                     <td>{{product.prix}}</td>
                     <td>{{product.quantite}}</td>
-
-
                     <td>
-
                         {% if product.quantite == 0 %}
                         {% else %}
                             <label>
@@ -31,12 +28,10 @@
                             </label>
                         {% endif %}
                     </td>
-
                     {% endfor %}
-                        <button type="submit">Commander</button>
-
                 </tr>
         </tbody>
     </table>
+        <br><br><br><button type="submit" style="padding: 5px 15px; border-radius: 5px; background-color: mediumorchid">Commander</button>
     </form>
 {% endblock %}

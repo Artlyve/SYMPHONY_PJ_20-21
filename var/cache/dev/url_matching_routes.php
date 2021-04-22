@@ -47,11 +47,14 @@ return [
                 .')'
                 .'|/supprimer/(\\d+)(*:275)'
                 .'|/user/u(?'
-                    .'|tilisateur/(?'
-                        .'|modifier/(\\d+)(*:321)'
-                        .'|panier/(\\d+)(*:341)'
+                    .'|tilisateur(?'
+                        .'|/(?'
+                            .'|modifier/(\\d+)(*:324)'
+                            .'|panier/(\\d+)(*:344)'
+                        .')'
+                        .'|2/modifier/(\\d+)(*:369)'
                     .')'
-                    .'|ser/supprimer/(\\d+)(*:369)'
+                    .'|ser/supprimer/(\\d+)(*:397)'
                 .')'
             .')/?$}sDu',
     ],
@@ -67,9 +70,10 @@ return [
         231 => [[['_route' => 'admin_delete_user', '_controller' => 'App\\Controller\\AdminController::deleteUser'], ['id'], null, null, false, true, null]],
         250 => [[['_route' => 'add', '_controller' => 'App\\Controller\\SiteController::add'], ['id'], null, null, false, true, null]],
         275 => [[['_route' => 'del', '_controller' => 'App\\Controller\\SiteController::del'], ['id'], null, null, false, true, null]],
-        321 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::editUser'], ['id'], null, null, false, true, null]],
-        341 => [[['_route' => 'user_panier', '_controller' => 'App\\Controller\\UserController::panierUser'], ['id'], null, null, false, true, null]],
-        369 => [
+        324 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::editUser'], ['id'], null, null, false, true, null]],
+        344 => [[['_route' => 'user_panier', '_controller' => 'App\\Controller\\UserController::panierUser'], ['id'], null, null, false, true, null]],
+        369 => [[['_route' => 'user_edit2', '_controller' => 'App\\Controller\\UserController::editUser2'], ['id'], null, null, false, true, null]],
+        397 => [
             [['_route' => 'user_delete_product', '_controller' => 'App\\Controller\\UserController::deleteUser'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

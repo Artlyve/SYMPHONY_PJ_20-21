@@ -394,10 +394,6 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Repository\UsersRepository" class="App\Repository\UsersRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
       <tag name="kernel.event_subscriber"/>
@@ -4183,7 +4179,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.5AsQ_vV"/>
+      <argument type="service" id=".service_locator.N2ChAfu"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5303,8 +5299,6 @@
     <service id=".abstract.instanceof.App\Repository\ProduitRepository" class="App\Repository\ProduitRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UsersRepository" class="App\Repository\UsersRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\UsersRepository" class="App\Repository\UsersRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.Kbr2i2X" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5651,7 +5645,7 @@
         <argument key="user" type="service" id=".errored..service_locator.8XUY8CO.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.BvivQsB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.89PfBA4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::deleteUser" type="service" id=".service_locator.ch4Jgvl"/>
@@ -5663,6 +5657,7 @@
         <argument key="App\Controller\SiteController::del" type="service" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\UserController::deleteUser" type="service" id=".service_locator.8XUY8CO"/>
         <argument key="App\Controller\UserController::editUser" type="service" id=".service_locator.ch4Jgvl"/>
+        <argument key="App\Controller\UserController::editUser2" type="service" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\UserController::panierUser" type="service" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Kernel::loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
@@ -5679,6 +5674,7 @@
         <argument key="App\Controller\SiteController:del" type="service" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\UserController:deleteUser" type="service" id=".service_locator.8XUY8CO"/>
         <argument key="App\Controller\UserController:editUser" type="service" id=".service_locator.ch4Jgvl"/>
+        <argument key="App\Controller\UserController:editUser2" type="service" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Controller\UserController:panierUser" type="service" id=".service_locator.ch4Jgvl"/>
         <argument key="kernel:loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
@@ -5918,13 +5914,12 @@
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.5AsQ_vV" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.N2ChAfu" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\PanierRepository" type="service" id="App\Repository\PanierRepository"/>
         <argument key="App\Repository\ProduitRepository" type="service" id="App\Repository\ProduitRepository"/>
         <argument key="App\Repository\UserRepository" type="service" id="App\Repository\UserRepository"/>
-        <argument key="App\Repository\UsersRepository" type="service" id="App\Repository\UsersRepository"/>
       </argument>
     </service>
     <service id=".service_locator.Hllcktv" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6181,12 +6176,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.BvivQsB"/>
+      <argument type="service" id=".service_locator.89PfBA4"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.BvivQsB"/>
+      <argument type="service" id=".service_locator.89PfBA4"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6604,7 +6599,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.BvivQsB"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.89PfBA4"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

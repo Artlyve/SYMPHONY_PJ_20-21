@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\EditUserType;
+use App\Form\RegistrationType;
 use App\Repository\ProduitRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -57,6 +58,36 @@ class UserController extends AbstractController
         }
         $this->addFlash('message', 'Echec de la modification du profil');
         return $this->render('user/edituser.html.twig', [
+            'form' => $form->createView(), 'id' => $user->getId()
+        ]);
+    }
+
+    /**
+     *  Editer le profil de l'utilisateur
+     *
+     *
+     * @Route("/utilisateur2/modifier/{id<\d+>}", name="edit2")
+     * @param User $user
+     * @param Request $request
+     * @return Response
+     */
+    public function editUser2(User $user, Request $request): Response
+    {
+        $form = $this->createForm(RegistrationType::class, $user);
+        $form->handleRequest($request);
+
+        $em = $this->em;
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            //$em->persist($user);
+            $em->flush();
+            $this->addFlash('message', 'Utilisateur modifié avec succès');
+            return $this->redirectToRoute('produit_products');
+
+        }
+        $this->addFlash('message', 'Echec de la modification du profil');
+        return $this->render('user/edituser2.html.twig', [
             'form' => $form->createView(), 'id' => $user->getId()
         ]);
     }

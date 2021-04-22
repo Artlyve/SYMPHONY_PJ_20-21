@@ -94,25 +94,22 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
             // line 18
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 18), "html", null, true);
             echo "</td>
-
-
                     <td>
-
                         ";
-            // line 23
-            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 23), 0))) {
-                // line 24
+            // line 20
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 20), 0))) {
+                // line 21
                 echo "                        ";
             } else {
-                // line 25
+                // line 22
                 echo "                            <label>
                                 <select name=\"choix[]\">
                                     ";
-                // line 27
+                // line 24
                 $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable(range(0, twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 27)));
+                $context['_seq'] = twig_ensure_traversable(range(0, twig_get_attribute($this->env, $this->source, $context["product"], "quantite", [], "any", false, false, false, 24)));
                 foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-                    // line 28
+                    // line 25
                     echo "                                        <option value=\"";
                     echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                     echo "\" >";
@@ -123,25 +120,23 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 30
+                // line 27
                 echo "                                </select>
                             </label>
                         ";
             }
-            // line 33
+            // line 30
             echo "                    </td>
-
                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
-        echo "                        <button type=\"submit\">Commander</button>
-
-                </tr>
+        // line 32
+        echo "                </tr>
         </tbody>
     </table>
+        <br><br><br><button type=\"submit\" style=\"padding: 5px 15px; border-radius: 5px; background-color: mediumorchid\">Commander</button>
     </form>
 ";
         
@@ -164,7 +159,7 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
 
     public function getDebugInfo()
     {
-        return array (  140 => 36,  132 => 33,  127 => 30,  116 => 28,  112 => 27,  108 => 25,  105 => 24,  103 => 23,  95 => 18,  91 => 17,  87 => 16,  83 => 14,  79 => 13,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  136 => 32,  129 => 30,  124 => 27,  113 => 25,  109 => 24,  105 => 22,  102 => 21,  100 => 20,  95 => 18,  91 => 17,  87 => 16,  83 => 14,  79 => 13,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -187,10 +182,7 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
                     <td>{{product.libelle}}</td>
                     <td>{{product.prix}}</td>
                     <td>{{product.quantite}}</td>
-
-
                     <td>
-
                         {% if product.quantite == 0 %}
                         {% else %}
                             <label>
@@ -202,13 +194,11 @@ class __TwigTemplate_239c6dfd44c9e8c1d94bb826ef6d4ed2a7887e71cd2c57778c1cfe687d9
                             </label>
                         {% endif %}
                     </td>
-
                     {% endfor %}
-                        <button type=\"submit\">Commander</button>
-
                 </tr>
         </tbody>
     </table>
+        <br><br><br><button type=\"submit\" style=\"padding: 5px 15px; border-radius: 5px; background-color: mediumorchid\">Commander</button>
     </form>
 {% endblock %}
 ", "produit/productList.html.twig", "C:\\wamp64\\www\\projet\\templates\\produit\\productList.html.twig");
